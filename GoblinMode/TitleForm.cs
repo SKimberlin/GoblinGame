@@ -19,7 +19,7 @@ namespace GoblinMode
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
+            CharacterCreate f1 = new CharacterCreate();
             this.Hide();
             f1.ShowDialog();
 

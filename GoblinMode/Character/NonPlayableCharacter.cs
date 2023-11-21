@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace GoblinMode.Character
 {
-    internal class NonPlayableCharacter
+    public class NonPlayableCharacter : Character
     {
         short PlayerStanding;
+        public Dialogue.Dialogue dialogue { get; set; }
 
+        public override bool Read(string filename)
+        {
+            base.Read(filename);
+            
+
+            return true;
+        }
     }
 }

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace GoblinMode.Character
 {
-    internal class Character
+    public class Character
     {
         const int STAT_MAX = 999;
         
@@ -18,22 +20,41 @@ namespace GoblinMode.Character
             pocketSize = (float)(100 + (this.power * 0.2) + (this.grit * 0.1));
         }
         
-        string name;
-        Image portrait;
+        public string name { get; set; }
+        public Image portrait;
         List<Item.Item> inventory;
         // Main Stats
-        int power;    // Strength
-        int sneak;    // Stealth
-        int grit;     // Endurance
-        int mischief; // Charisma/Trickery
-        int cunning;  // Intelligence/Resourcefulness
-        int skitter;  // Agility
-        int gleam;    // Luck/Treasure finding
+        public int power { get; set; }    // Strength
+        public int sneak { get; set; }    // Stealth
+        public int grit { get; set; }     // Endurance
+        public int mischief { get; set; } // Charisma/Trickery
+        public int cunning { get; set; }  // Intelligence/Resourcefulness
+        public int skitter { get; set; }  // Agility
+        public int gleam { get; set; }    // Luck/Treasure finding
 
         // Derived Stats
         float pocketSize;
         int maxHealth;
 
+        public virtual bool Read(string filename)
+        {
+            string json = File.ReadAllText(filename);
+
+            Character character = JsonSerializer.Deserialize<Character>(json);
+
+            this.name = character.name;
+            this.portrait = character.portrait;
+            this.inventory = character.inventory;
+            this.power = character.power;
+            this.sneak = character.sneak;
+            this.mischief = character.mischief;
+            this.cunning = character.cunning;
+            this.skitter = character.skitter;
+            this.gleam = character.gleam;
+
+
+            return true;
+        }
 
     }
 }

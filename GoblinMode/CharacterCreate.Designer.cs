@@ -1,6 +1,6 @@
 ﻿namespace GoblinMode
 {
-    partial class Form1
+    partial class CharacterCreate
     {
         /// <summary>
         ///  Required designer variable.
@@ -46,11 +46,11 @@
             groupBox1 = new GroupBox();
             PointsLeftCounter = new Label();
             label16 = new Label();
-            button14 = new Button();
-            button13 = new Button();
-            button12 = new Button();
-            button11 = new Button();
-            button10 = new Button();
+            GleamAddButton = new Button();
+            SkitterAddButton = new Button();
+            CunningAddButton = new Button();
+            MischiefAddButton = new Button();
+            GritAddButton = new Button();
             SneakAddButton = new Button();
             button8 = new Button();
             button7 = new Button();
@@ -60,7 +60,7 @@
             SneakRemoveButton = new Button();
             PowerRemoveButton = new Button();
             label15 = new Label();
-            textBox1 = new TextBox();
+            NameBox = new TextBox();
             button1 = new Button();
             CharacterPortrait = new PictureBox();
             button2 = new Button();
@@ -232,17 +232,17 @@
             // 
             groupBox1.Controls.Add(PointsLeftCounter);
             groupBox1.Controls.Add(label16);
-            groupBox1.Controls.Add(button14);
+            groupBox1.Controls.Add(GleamAddButton);
             groupBox1.Controls.Add(GleamPoints);
-            groupBox1.Controls.Add(button13);
+            groupBox1.Controls.Add(SkitterAddButton);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(SkitterPoints);
-            groupBox1.Controls.Add(button12);
+            groupBox1.Controls.Add(CunningAddButton);
             groupBox1.Controls.Add(CunningPoints);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(button11);
+            groupBox1.Controls.Add(MischiefAddButton);
             groupBox1.Controls.Add(MischiefPoints);
-            groupBox1.Controls.Add(button10);
+            groupBox1.Controls.Add(GritAddButton);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(GritPoints);
             groupBox1.Controls.Add(SneakAddButton);
@@ -288,55 +288,60 @@
             label16.TabIndex = 28;
             label16.Text = "Points Left:";
             // 
-            // button14
+            // GleamAddButton
             // 
-            button14.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button14.Location = new Point(189, 335);
-            button14.Name = "button14";
-            button14.Size = new Size(36, 36);
-            button14.TabIndex = 27;
-            button14.Text = "+";
-            button14.UseVisualStyleBackColor = true;
+            GleamAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            GleamAddButton.Location = new Point(189, 335);
+            GleamAddButton.Name = "GleamAddButton";
+            GleamAddButton.Size = new Size(36, 36);
+            GleamAddButton.TabIndex = 27;
+            GleamAddButton.Text = "+";
+            GleamAddButton.UseVisualStyleBackColor = true;
+            GleamAddButton.Click += AddPoint;
             // 
-            // button13
+            // SkitterAddButton
             // 
-            button13.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button13.Location = new Point(189, 293);
-            button13.Name = "button13";
-            button13.Size = new Size(36, 36);
-            button13.TabIndex = 26;
-            button13.Text = "+";
-            button13.UseVisualStyleBackColor = true;
+            SkitterAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            SkitterAddButton.Location = new Point(189, 293);
+            SkitterAddButton.Name = "SkitterAddButton";
+            SkitterAddButton.Size = new Size(36, 36);
+            SkitterAddButton.TabIndex = 26;
+            SkitterAddButton.Text = "+";
+            SkitterAddButton.UseVisualStyleBackColor = true;
+            SkitterAddButton.Click += AddPoint;
             // 
-            // button12
+            // CunningAddButton
             // 
-            button12.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button12.Location = new Point(189, 251);
-            button12.Name = "button12";
-            button12.Size = new Size(36, 36);
-            button12.TabIndex = 25;
-            button12.Text = "+";
-            button12.UseVisualStyleBackColor = true;
+            CunningAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            CunningAddButton.Location = new Point(189, 251);
+            CunningAddButton.Name = "CunningAddButton";
+            CunningAddButton.Size = new Size(36, 36);
+            CunningAddButton.TabIndex = 25;
+            CunningAddButton.Text = "+";
+            CunningAddButton.UseVisualStyleBackColor = true;
+            CunningAddButton.Click += AddPoint;
             // 
-            // button11
+            // MischiefAddButton
             // 
-            button11.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button11.Location = new Point(189, 209);
-            button11.Name = "button11";
-            button11.Size = new Size(36, 36);
-            button11.TabIndex = 24;
-            button11.Text = "+";
-            button11.UseVisualStyleBackColor = true;
+            MischiefAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            MischiefAddButton.Location = new Point(189, 209);
+            MischiefAddButton.Name = "MischiefAddButton";
+            MischiefAddButton.Size = new Size(36, 36);
+            MischiefAddButton.TabIndex = 24;
+            MischiefAddButton.Text = "+";
+            MischiefAddButton.UseVisualStyleBackColor = true;
+            MischiefAddButton.Click += AddPoint;
             // 
-            // button10
+            // GritAddButton
             // 
-            button10.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.Location = new Point(189, 167);
-            button10.Name = "button10";
-            button10.Size = new Size(36, 36);
-            button10.TabIndex = 23;
-            button10.Text = "+";
-            button10.UseVisualStyleBackColor = true;
+            GritAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            GritAddButton.Location = new Point(189, 167);
+            GritAddButton.Name = "GritAddButton";
+            GritAddButton.Size = new Size(36, 36);
+            GritAddButton.TabIndex = 23;
+            GritAddButton.Text = "+";
+            GritAddButton.UseVisualStyleBackColor = true;
+            GritAddButton.Click += AddPoint;
             // 
             // SneakAddButton
             // 
@@ -431,13 +436,13 @@
             label15.TabIndex = 16;
             label15.Text = "Name";
             // 
-            // textBox1
+            // NameBox
             // 
-            textBox1.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(110, 9);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(406, 34);
-            textBox1.TabIndex = 17;
+            NameBox.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            NameBox.Location = new Point(110, 9);
+            NameBox.Name = "NameBox";
+            NameBox.Size = new Size(406, 34);
+            NameBox.TabIndex = 17;
             // 
             // button1
             // 
@@ -534,7 +539,7 @@
             PreviousMoleSign.UseVisualStyleBackColor = true;
             PreviousMoleSign.Click += MoleSignClick;
             // 
-            // Form1
+            // CharacterCreate
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -542,10 +547,10 @@
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(NameBox);
             Controls.Add(label15);
             Controls.Add(groupBox1);
-            Name = "Form1";
+            Name = "CharacterCreate";
             Text = "Form1";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -576,11 +581,11 @@
         private Button PowerAddButton;
         private GroupBox groupBox1;
         private Button PowerRemoveButton;
-        private Button button14;
-        private Button button13;
-        private Button button12;
-        private Button button11;
-        private Button button10;
+        private Button GleamAddButton;
+        private Button SkitterAddButton;
+        private Button CunningAddButton;
+        private Button MischiefAddButton;
+        private Button GritAddButton;
         private Button SneakAddButton;
         private Button button8;
         private Button button7;
@@ -591,7 +596,7 @@
         private Label PointsLeftCounter;
         private Label label16;
         private Label label15;
-        private TextBox textBox1;
+        private TextBox NameBox;
         private Button button1;
         private PictureBox CharacterPortrait;
         private Button button2;
