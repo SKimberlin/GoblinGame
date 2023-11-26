@@ -14,12 +14,17 @@ namespace GoblinMode
 {
     public partial class DialogueForm : Form
     {
+        private Player player;
         private NonPlayableCharacter currentNPC;
         private Response currentResponse;
         private int x;
         public DialogueForm(NonPlayableCharacter npc)
         {
             InitializeComponent();
+            if (CharacterManager.Instance.GetCharacterByID(0) != null)
+            {
+                player = CharacterManager.Instance.GetCharacterByID(0) as Player;
+            }
             currentNPC = npc;
             currentResponse = currentNPC.dialogue.dialogueStart;
 
@@ -31,32 +36,59 @@ namespace GoblinMode
             if (currentNPC.name != null)
             {
                 NPCNameBox.Text = currentNPC.name;
+                NPCNameBox.Location = new Point(NPCNameBox.Location.X - NPCNameBox.Width, NPCNameBox.Location.Y);
             }
             if (currentNPC.portrait != null)
             {
                 NPCPortrait.Image = currentNPC.portrait;
             }
-            DialogueBox.Text = currentResponse.responseText;
+            if (player.name != null) 
+            {
+                PlayerNameBox.Text = player.name;
+            }
+            if (player.portrait != null)
+            {
+                PlayerPortrait.Image = player.portrait;
+            }
             x = DialogueBox.Location.X;
             DialogueBox.Location = new Point(x - DialogueBox.Width, DialogueBox.Location.Y);
-            foreach (var option in currentResponse.dialogueOptions.Keys)
-            {
-                PlayerResponseBox.Items.Add(option);
-            }
 
-
+            UpdateUI();
         }
 
         private void SubmitResponse(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(PlayerResponseBox.Text)) return;
+
+            if (currentResponse.formOptions.TryGetValue(PlayerResponseBox.Text, out var formFactory))
+            {
+                Form form = formFactory.Invoke();
+                form.ShowDialog();
+            }
+
             currentResponse = currentResponse.dialogueOptions[PlayerResponseBox.Text];
-            PlayerResponseBox.Items.Clear();
+
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+
+            if (currentResponse == null) return;
             DialogueBox.Text = currentResponse.responseText;
             DialogueBox.Location = new Point(x - DialogueBox.Width, DialogueBox.Location.Y);
+            PlayerResponseBox.Items.Clear();
+
             if (currentResponse.dialogueOptions != null)
             {
                 foreach (var option in currentResponse.dialogueOptions.Keys)
+                {
+                    PlayerResponseBox.Items.Add(option);
+                }
+            }
+            if (currentResponse.formOptions != null)
+            {
+                foreach (var option in currentResponse.formOptions.Keys)
                 {
                     PlayerResponseBox.Items.Add(option);
                 }

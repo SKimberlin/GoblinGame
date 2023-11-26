@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoblinMode.Item;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,9 +20,12 @@ namespace GoblinMode.Character
             this.power = power; this.sneak = sneak; this.grit = grit; this.mischief = mischief; this.cunning = cunning; this.skitter = skitter; this.gleam = gleam;
             pocketSize = (float)(100 + (this.power * 0.2) + (this.grit * 0.1));
         }
-        
+
+        public int id;
         public string name { get; set; }
+        public string portraitPath;
         public Image portrait;
+        public Weapon currentWeapon;
         List<Item.Item> inventory;
         // Main Stats
         public int power { get; set; }    // Strength
@@ -34,7 +38,8 @@ namespace GoblinMode.Character
 
         // Derived Stats
         float pocketSize;
-        int maxHealth;
+        public int maxHealth;
+        public float currentHealth;
 
         public virtual bool Read(string filename)
         {
@@ -42,15 +47,7 @@ namespace GoblinMode.Character
 
             Character character = JsonSerializer.Deserialize<Character>(json);
 
-            this.name = character.name;
-            this.portrait = character.portrait;
-            this.inventory = character.inventory;
-            this.power = character.power;
-            this.sneak = character.sneak;
-            this.mischief = character.mischief;
-            this.cunning = character.cunning;
-            this.skitter = character.skitter;
-            this.gleam = character.gleam;
+            
 
 
             return true;

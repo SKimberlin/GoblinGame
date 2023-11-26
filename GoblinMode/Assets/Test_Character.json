@@ -1,6 +1,7 @@
 {
-  "name": "Goblin",
-  "portrait": "assets/mogus.jpg",
+  "id": 1,
+  "name": "Wise Old Goblin",
+  "portraitPath": "assets/mogus.jpg",
   "power": 50,
   "sneak": 30,
   "grit": 40,
@@ -8,7 +9,15 @@
   "cunning": 35,
   "skitter": 45,
   "gleam": 60,
-  "dialogue": {
-    "dialogueStart": "Hello buddy!"
+  "dialogue": "Good Morning Goober!",
+  "dialogueOptions": {
+    "Good Morning to you!": {
+      "responseText": "You have just been sent here from very far away youngin, what city would you like to travel to?",
+      "dialogueOptions": {
+        "Bogmire's Hollow":,
+        "Gleamshire":,
+        "Emberskeep":
+      }
+    }
   }
 }

@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace GoblinMode
 {
-    internal class FileIO
+    internal class TownManager
     {
-
+        List<Town> list;
+        public TownManager()
+        {
+            list = new List<Town>();
+        }
     }
 }

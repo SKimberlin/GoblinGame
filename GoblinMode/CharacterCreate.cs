@@ -1,5 +1,6 @@
 using GoblinMode.Character;
 using GoblinMode.Dialogue;
+using System.Windows.Forms;
 
 namespace GoblinMode
 {
@@ -7,22 +8,23 @@ namespace GoblinMode
     {
         const int MaxPoints = 35;
         int Points = MaxPoints;
-        int Power = 0;
-        int Sneak = 0;
-        int Grit = 0;
-        int Mischief = 0;
-        int Cunning = 0;
-        int Skitter = 0;
-        int Gleam = 0;
         Player.MoleSign moleSign = 0;
+        UI.Player player;
         public CharacterCreate()
         {
             InitializeComponent();
             PointsLeftCounter.Text = Points.ToString();
-            Directory.SetCurrentDirectory("../../..");
-            NonPlayableCharacter nonPlayableCharacter = new NonPlayableCharacter();
-            nonPlayableCharacter.Read("Assets/Test_Character.json");
-            Console.WriteLine(nonPlayableCharacter.power);
+
+            player = new UI.Player();
+
+            NameBox.DataBindings.Add("Text", player, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
+            PowerPoints.DataBindings.Add("Text", player, "Power", false, DataSourceUpdateMode.OnPropertyChanged);
+            SneakPoints.DataBindings.Add("Text", player, "Sneak", false, DataSourceUpdateMode.OnPropertyChanged);
+            GritPoints.DataBindings.Add("Text", player, "Grit", false, DataSourceUpdateMode.OnPropertyChanged);
+            MischiefPoints.DataBindings.Add("Text", player, "Mischief", false, DataSourceUpdateMode.OnPropertyChanged);
+            CunningPoints.DataBindings.Add("Text", player, "Cunning", false, DataSourceUpdateMode.OnPropertyChanged);
+            SkitterPoints.DataBindings.Add("Text", player, "Skitter", false, DataSourceUpdateMode.OnPropertyChanged);
+            GleamPoints.DataBindings.Add("Text", player, "Gleam", false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void AddPoint(object sender, EventArgs e)
@@ -32,32 +34,25 @@ namespace GoblinMode
                 switch (((Control)sender).Name)
                 {
                     case "PowerAddButton":
-                        Power++;
-                        PowerPoints.Text = Power.ToString();
+                        player.Power++;
                         break;
                     case "SneakAddButton":
-                        Sneak++;
-                        SneakPoints.Text = Sneak.ToString();
+                        player.Sneak++;
                         break;
                     case "GritAddButton":
-                        Grit++;
-                        GritPoints.Text = Grit.ToString();
+                        player.Grit++;
                         break;
                     case "MischiefAddButton":
-                        Mischief++;
-                        MischiefPoints.Text = Mischief.ToString();
+                        player.Mischief++;
                         break;
                     case "CunningAddButton":
-                        Cunning++;
-                        CunningPoints.Text = Cunning.ToString();
+                        player.Cunning++;
                         break;
                     case "SkitterAddButton":
-                        Skitter++;
-                        SkitterPoints.Text = Skitter.ToString();
+                        player.Skitter++;
                         break;
                     case "GleamAddButton":
-                        Gleam++;
-                        GleamPoints.Text = Gleam.ToString();
+                        player.Gleam++;
                         break;
                     case null:
                         break;
@@ -74,65 +69,84 @@ namespace GoblinMode
                 switch (((Control)sender).Name)
                 {
                     case "PowerRemoveButton":
-                        if (Power > 0)
+                        if (player.Power > 0)
                         {
-                            Power--;
-                            PowerPoints.Text = Power.ToString();
+                            player.Power--;
                             Points++;
-                            PointsLeftCounter.Text = Points.ToString();
                         }
                         break;
                     case "SneakRemoveButton":
-                        if (Sneak > 0)
+                        if (player.Sneak > 0)
                         {
-                            Sneak--;
-                            SneakPoints.Text = Sneak.ToString();
+                            player.Sneak--;
                             Points++;
-                            PointsLeftCounter.Text = Points.ToString();
+                        }
+                        break;
+                    case "GritRemoveButton":
+                        if (player.Grit > 0)
+                        {
+                            player.Grit--;
+                            Points++;
+                        }
+                        break;
+                    case "MischiefRemoveButton":
+                        if (player.Mischief > 0)
+                        {
+                            player.Mischief--;
+                            Points++;
+                        }
+                        break;
+                    case "CunningRemoveButton":
+                        if (player.Cunning > 0)
+                        {
+                            player.Cunning--;
+                            Points++;
+                        }
+                        break;
+                    case "SkitterRemoveButton":
+                        if (player.Skitter > 0)
+                        {
+                            player.Skitter--;
+                            Points++;
+                        }
+                        break;
+                    case "GleamRemoveButton":
+                        if (player.Gleam > 0)
+                        {
+                            player.Gleam--;
+                            Points++;
                         }
                         break;
                     case null:
                         break;
                 }
-                
+
             }
         }
 
         private void CreateCharacter(object sender, EventArgs e)
         {
-            /*
-            if (Points != 0)
-            {
-                return;
-            }
-            if (String.IsNullOrEmpty(NameBox.Text))
-            {
-                return;
-            }*/
-            Player player = new Player();
-            NameBox.DataBindings.Add("Text", player, "name", false);
-            PowerPoints.DataBindings.Add("Text", player, "power", false);
-            SneakPoints.DataBindings.Add("Text", player, "sneak", false);
-            GritPoints.DataBindings.Add("Text", player, "grit", false);
-            MischiefPoints.DataBindings.Add("Text", player, "mischief", false);
-            CunningPoints.DataBindings.Add("Text", player, "cunning", false);
-            SkitterPoints.DataBindings.Add("Text", player, "skitter", false);
-            GleamPoints.DataBindings.Add("Text", player, "gleam", false);
+            if (Points != 0) return;
+            if (String.IsNullOrEmpty(player.Name)) return;
 
-            NonPlayableCharacter nonPlayableCharacter = new NonPlayableCharacter();
-            Dialogue.Dialogue dialogue = new Dialogue.Dialogue();
-            Response response = new Response();
-            response.dialogueOptions = new Dictionary<string, Response>();
-            response.responseText = "Hello pisspot!";
-            response.dialogueOptions.Add("Hello!", new Dialogue.Response { responseText = "Response to Hello!" });
-            response.dialogueOptions.Add("Go away!", new Dialogue.Response { responseText = "Response to Go away!" });
-            dialogue.dialogueStart = response;
-            nonPlayableCharacter.dialogue = dialogue;
-            nonPlayableCharacter.name = "Schmi";
-            nonPlayableCharacter.portrait = Image.FromFile("assets/mogus.jpg");
+            Player gamePlayer = new Player()
+            {
+                id = 0,
+                name = player.Name,
+                power = player.Power,
+                sneak = player.Sneak,
+                grit = player.Grit,
+                mischief = player.Mischief,
+                cunning = player.Cunning,
+                skitter = player.Skitter,
+                gleam = player.Gleam
+            };
+            CharacterManager.Instance.AddCharacter(gamePlayer);
 
-            DialogueForm dialogueForm = new DialogueForm(nonPlayableCharacter);
+            DialogueForm dialogueForm = new DialogueForm(CharacterManager.Instance.GetCharacterByID(1) as NonPlayableCharacter);
             dialogueForm.ShowDialog();
+            //BattleForm battle = new BattleForm(nonPlayableCharacter, dialogueForm);
+            //battle.ShowDialog(this);
         }
 
         private void MoleSignClick(object sender, EventArgs e)

@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoblinMode
+namespace GoblinMode.Dialogue
 {
-    internal class ArenaController
+    internal class DialogueManager
     {
-        void Fight()
-        {
-
-        }
     }
 }

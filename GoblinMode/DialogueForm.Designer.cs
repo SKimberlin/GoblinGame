@@ -70,11 +70,10 @@
             // 
             NPCNameBox.AutoSize = true;
             NPCNameBox.Font = new Font("Ace Attorney", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            NPCNameBox.Location = new Point(450, 12);
+            NPCNameBox.Location = new Point(542, 12);
             NPCNameBox.Name = "NPCNameBox";
-            NPCNameBox.Size = new Size(92, 34);
+            NPCNameBox.Size = new Size(0, 34);
             NPCNameBox.TabIndex = 35;
-            NPCNameBox.Text = "Name";
             // 
             // DialogueBox
             // 

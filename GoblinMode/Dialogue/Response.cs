@@ -10,8 +10,11 @@ namespace GoblinMode.Dialogue
     {
         public string responseText { get; set; }
         public Dictionary<string, Response> dialogueOptions { get; set; }
+        public Dictionary<string, Func<Form>> formOptions { get; set; }
 
-        public bool IsEndOfDialogue { get; set; }
-
+        public Response() 
+        {
+            formOptions = new Dictionary<string, Func<Form>>();
+        }
     }
 }

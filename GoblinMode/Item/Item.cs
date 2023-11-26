@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GoblinMode.Item
 {
-    internal class Item
+    public class Item
     {
         float itemWorth;
         float itemWeight;
