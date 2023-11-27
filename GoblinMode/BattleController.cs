@@ -9,23 +9,34 @@ namespace GoblinMode
 {
     internal class BattleController
     {
+        Character.Player player;
+        Character.NonPlayableCharacter npc;
         Random rand;
-        public BattleController() 
+        public BattleController(Character.NonPlayableCharacter npc) 
         { 
             rand = new Random();
+            this.player = CharacterManager.Instance.GetPlayer();
+            this.npc = npc;
         }
 
-        public void Attack(Character.Character target, Character.Character attacker)
+        public void Attack(bool char1Turn)
         {
-            target.currentHealth -= attacker.currentWeapon.damage;
+            if (char1Turn) 
+            {
+                npc.currentHealth -= player.currentWeapon.damage;
+            }
+            else
+            {
+                player.currentHealth -= npc.currentWeapon.damage;
+            }
         }
-        public void Block()
+        public void Block(bool char1Turn)
         {
 
         }
-        public bool Run(Character.Character target, Character.Character attacker) 
+        public bool Run(bool char1Turn) 
         {
-            if (target.skitter < (0.5 + rand.NextDouble()) * attacker.skitter)
+            if (player.skitter < (0.5 + rand.NextDouble()) * npc.skitter)
             {
                 return true;
             }

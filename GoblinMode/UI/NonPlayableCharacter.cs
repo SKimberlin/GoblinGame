@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoblinMode
+namespace GoblinMode.UI
 {
-    internal class Json
+    internal class NonPlayableCharacter
     {
-        //static bool Read
     }
 }

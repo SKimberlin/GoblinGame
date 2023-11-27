@@ -21,12 +21,12 @@ namespace GoblinMode
         public DialogueForm(NonPlayableCharacter npc)
         {
             InitializeComponent();
-            if (CharacterManager.Instance.GetCharacterByID(0) != null)
+            if (CharacterManager.Instance.GetPlayer() != null)
             {
-                player = CharacterManager.Instance.GetCharacterByID(0) as Player;
+                player = CharacterManager.Instance.GetPlayer();
             }
             currentNPC = npc;
-            currentResponse = currentNPC.dialogue.dialogueStart;
+            if (currentNPC.dialogue != null) currentResponse = currentNPC.dialogue.dialogueStart;
 
             InitializeDialogue();
         }
@@ -42,7 +42,7 @@ namespace GoblinMode
             {
                 NPCPortrait.Image = currentNPC.portrait;
             }
-            if (player.name != null) 
+            if (player.name != null)
             {
                 PlayerNameBox.Text = player.name;
             }
@@ -63,7 +63,9 @@ namespace GoblinMode
             if (currentResponse.formOptions.TryGetValue(PlayerResponseBox.Text, out var formFactory))
             {
                 Form form = formFactory.Invoke();
-                form.ShowDialog();
+                form.Show();
+                Close();
+                return;
             }
 
             currentResponse = currentResponse.dialogueOptions[PlayerResponseBox.Text];

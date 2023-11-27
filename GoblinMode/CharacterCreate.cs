@@ -1,5 +1,6 @@
 using GoblinMode.Character;
 using GoblinMode.Dialogue;
+using GoblinMode.Item;
 using System.Windows.Forms;
 
 namespace GoblinMode
@@ -10,11 +11,15 @@ namespace GoblinMode
         int Points = MaxPoints;
         Player.MoleSign moleSign = 0;
         UI.Player player;
+        List<Image> portraits = new List<Image>();
+        private int currentPortrait = 0;
         public CharacterCreate()
         {
+            portraits.Add(Image.FromFile("Assets/GoblinMale.jpg"));
+            portraits.Add(Image.FromFile("Assets/GoblinFemale.jpg"));
             InitializeComponent();
             PointsLeftCounter.Text = Points.ToString();
-
+            CharacterPortrait.Image = portraits[currentPortrait];
             player = new UI.Player();
 
             NameBox.DataBindings.Add("Text", player, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -120,18 +125,17 @@ namespace GoblinMode
                     case null:
                         break;
                 }
-
+                PointsLeftCounter.Text = Points.ToString();
             }
         }
 
         private void CreateCharacter(object sender, EventArgs e)
         {
-            if (Points != 0) return;
-            if (String.IsNullOrEmpty(player.Name)) return;
+            //if (Points != 0) return;
+            //if (String.IsNullOrEmpty(player.Name)) return;
 
             Player gamePlayer = new Player()
             {
-                id = 0,
                 name = player.Name,
                 power = player.Power,
                 sneak = player.Sneak,
@@ -139,14 +143,19 @@ namespace GoblinMode
                 mischief = player.Mischief,
                 cunning = player.Cunning,
                 skitter = player.Skitter,
-                gleam = player.Gleam
+                gleam = player.Gleam,
+                portrait = portraits[currentPortrait]
+                
             };
-            CharacterManager.Instance.AddCharacter(gamePlayer);
+            Weapon weapon = new Weapon(0);
+            weapon.damage = 10;
+            gamePlayer.currentWeapon = weapon;
+            gamePlayer.SetDerived();
+            CharacterManager.Instance.SetPlayer(gamePlayer);
 
-            DialogueForm dialogueForm = new DialogueForm(CharacterManager.Instance.GetCharacterByID(1) as NonPlayableCharacter);
-            dialogueForm.ShowDialog();
-            //BattleForm battle = new BattleForm(nonPlayableCharacter, dialogueForm);
-            //battle.ShowDialog(this);
+            DialogueForm dialogueForm = new DialogueForm(CharacterManager.Instance.GetCharacterByID(0));
+            dialogueForm.Show();
+            this.Close();
         }
 
         private void MoleSignClick(object sender, EventArgs e)
@@ -162,6 +171,24 @@ namespace GoblinMode
             if (((int)moleSign) > 3) { moleSign = 0; }
             else if (((int)moleSign) < 0) { moleSign = (Player.MoleSign)3; }
 
+        }
+
+        private void NextImage(object sender, EventArgs e)
+        {
+            if (currentPortrait < portraits.Count - 1)
+            {
+                currentPortrait++;
+                CharacterPortrait.Image = portraits[currentPortrait];
+            }
+        }
+
+        private void PreviousImage(object sender, EventArgs e)
+        {
+            if (currentPortrait > 0)
+            {
+                currentPortrait--;
+                CharacterPortrait.Image = portraits[currentPortrait];
+            }
         }
     }
 }

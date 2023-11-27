@@ -9,12 +9,15 @@ namespace GoblinMode
 {
     public class Town
     {
+        public int id;
+        private static int lastAssignedId = 0;
         public string name;
         public Image townImage;
-        public List<NonPlayableCharacter> residents;
+        public List<int> residentIDs;
         public Town() 
         {
-            residents = new List<NonPlayableCharacter>();
+            id = lastAssignedId++;
+            residentIDs = new List<int>();
         }
     }
 }

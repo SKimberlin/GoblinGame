@@ -12,9 +12,30 @@ namespace GoblinMode
 {
     public partial class MapForm : Form
     {
+        private List<Town> towns;
         public MapForm()
         {
             InitializeComponent();
+            InitializeMap();
+        }
+
+        private void InitializeMap()
+        {
+            towns = TownManager.Instance.GetTowns();
+            foreach (Town town in towns)
+            {
+                if (town != null) 
+                { 
+                    CurrentTown.Items.Add(town.name);
+                }
+            }
+        }
+
+        private void GoToTown(object sender, EventArgs e)
+        {
+            TownForm townForm = new TownForm(TownManager.Instance.GetTownByName(CurrentTown.Text));
+            townForm.Show();
+            this.Close();
         }
     }
 }

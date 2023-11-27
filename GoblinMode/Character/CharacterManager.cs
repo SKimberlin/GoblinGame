@@ -10,7 +10,13 @@ namespace GoblinMode.Character
     public class CharacterManager
     {
         private static CharacterManager instance;
-        private List<Character> characters = new List<Character>();
+        private List<NonPlayableCharacter> nonPlayableCharacters = new List<NonPlayableCharacter>();
+        private Player player;
+        public void SetPlayer(Player player)
+        {
+            this.player = player;
+        }
+        public Player GetPlayer() { return this.player; }
 
         public static CharacterManager Instance
         {
@@ -23,13 +29,13 @@ namespace GoblinMode.Character
                 return instance;
             }
         }
-        public void AddCharacter(Character character) 
-        { 
-            characters.Add(character);
-        }
-        public Character GetCharacterByID(int id) 
+        public void AddCharacter(NonPlayableCharacter character) 
         {
-            foreach (Character character in characters)
+            nonPlayableCharacters.Add(character);
+        }
+        public NonPlayableCharacter GetCharacterByID(int id) 
+        {
+            foreach (NonPlayableCharacter character in nonPlayableCharacters)
             {
                 if (character.id == id)
                 {
@@ -38,25 +44,36 @@ namespace GoblinMode.Character
             }
             return null;
         }
-        public void ReplaceCharacterDataByID(int id, Character character) 
+        public NonPlayableCharacter GetCharacterByName(string name)
         {
-            for (int i = 0; i < characters.Count; i++)
+            foreach (NonPlayableCharacter character in nonPlayableCharacters)
             {
-                if (characters[i].id == id) 
-                { 
-                    characters.RemoveAt(i);
-                    characters.Insert(i, character);
+                if (character.name == name)
+                {
+                    return character;
+                }
+            }
+            return null;
+        }
+        public void ReplaceCharacterDataByID(int id, NonPlayableCharacter character) 
+        {
+            for (int i = 0; i < nonPlayableCharacters.Count; i++)
+            {
+                if (nonPlayableCharacters[i].id == id) 
+                {
+                    nonPlayableCharacters.RemoveAt(i);
+                    nonPlayableCharacters.Insert(i, character);
                 }
             }
         }
 
         public void DeleteCharacterByID(int id)
         {
-            for (int i = 0; i < characters.Count; i++) 
+            for (int i = 0; i < nonPlayableCharacters.Count; i++) 
             { 
-                if (characters[i].id == id) 
-                { 
-                    characters.RemoveAt(i); 
+                if (nonPlayableCharacters[i].id == id) 
+                {
+                    nonPlayableCharacters.RemoveAt(i); 
                 } 
             }
         }

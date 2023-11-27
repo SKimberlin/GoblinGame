@@ -20,8 +20,12 @@ namespace GoblinMode.Character
             this.power = power; this.sneak = sneak; this.grit = grit; this.mischief = mischief; this.cunning = cunning; this.skitter = skitter; this.gleam = gleam;
             pocketSize = (float)(100 + (this.power * 0.2) + (this.grit * 0.1));
         }
+        public void SetDerived()
+        {
+            maxHealth = 100 + (this.power * 0.5) + (this.grit * 1);
+            pocketSize = 50 + this.power + this.grit;
+        }
 
-        public int id;
         public string name { get; set; }
         public string portraitPath;
         public Image portrait;
@@ -38,20 +42,8 @@ namespace GoblinMode.Character
 
         // Derived Stats
         float pocketSize;
-        public int maxHealth;
+        public double maxHealth;
         public float currentHealth;
-
-        public virtual bool Read(string filename)
-        {
-            string json = File.ReadAllText(filename);
-
-            Character character = JsonSerializer.Deserialize<Character>(json);
-
-            
-
-
-            return true;
-        }
 
     }
 }

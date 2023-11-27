@@ -10,7 +10,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GoblinMode.Character
 {
-    internal class Player : Character
+    public class Player : Character
     {
         public enum MoleSign
         {
@@ -55,32 +55,5 @@ namespace GoblinMode.Character
         // The Ally
         // The Brawler
 
-        public bool Read(string filename)
-        {
-            string json = File.ReadAllText(filename);
-
-            Player character = JsonSerializer.Deserialize<Player>(json);
-
-            this.name = character.name;
-            //this.portrait = character.portrait;
-            //this.inventory = character.inventory;
-            this.power = character.power;
-            this.sneak = character.sneak;
-            this.mischief = character.mischief;
-            this.cunning = character.cunning;
-            this.skitter = character.skitter;
-            this.gleam = character.gleam;
-
-
-            return true;
-        }
-        public bool Write(string filename)
-        {
-            string json = JsonSerializer.Serialize(power);
-
-            File.WriteAllText(filename, json);
-            return true;
-
-        }
     }
 }

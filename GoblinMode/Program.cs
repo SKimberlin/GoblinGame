@@ -16,5 +16,6 @@ namespace GoblinMode
             Application.Run(new TitleForm());
 
         }
+        
     }
 }

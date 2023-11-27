@@ -18,28 +18,23 @@ namespace GoblinMode
         Player player;
         BattleController battle;
         Form endForm;
+        Random random =new Random();
         public BattleForm(NonPlayableCharacter npc)
         {
             InitializeComponent();
-            player = new Player();
-            Weapon weapon = new Weapon(0);
-            weapon.damage = 10;
-            player.currentWeapon = weapon;
-            player.maxHealth = 400;
-            player.skitter = 5;
+            player = CharacterManager.Instance.GetPlayer();
             currentNPC = npc;
             if (currentNPC.portrait != null) NPCPortrait.Image = currentNPC.portrait;
             if (currentNPC.name != null) NPCNameBox.Text = currentNPC.name;
-            battle = new BattleController();
-            Update();
+            battle = new BattleController(currentNPC);
+            UpdateUI();
         }
 
         private void Attack(object sender, EventArgs e)
         {
-            battle.Attack(currentNPC, player);
-            Update();
-            
-            
+            battle.Attack(true);
+            UpdateUI();
+            NPCTurn();
         }
 
         private void Inventory(object sender, EventArgs e)
@@ -49,21 +44,42 @@ namespace GoblinMode
 
         private void Run(object sender, EventArgs e)
         {
-            if(battle.Run(currentNPC, player))
+            if(battle.Run(true))
             {
                 endForm.ShowDialog();
             }
+            NPCTurn();
         }
 
         private void Block(object sender, EventArgs e)
         {
-
+            battle.Block(true);
+            UpdateUI();
+            NPCTurn();
         }
 
-        private void Update()
+        private void UpdateUI()
         {
             NPCHealth.Text = currentNPC.currentHealth.ToString() + "/" + currentNPC.maxHealth.ToString();
             PlayerHealth.Text = player.currentHealth.ToString() + "/" + player.maxHealth.ToString();
+        }
+        private void NPCTurn()
+        {
+            double npcChoice = random.NextDouble();
+            
+            if (npcChoice < 0.6)
+            {
+                battle.Attack(false);
+            }
+            else if (npcChoice < 0.9)
+            {
+                battle.Block(false);
+            }
+            else
+            {
+                battle.Run(false);
+            }
+            UpdateUI();
         }
     }
 }
