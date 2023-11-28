@@ -9,7 +9,6 @@ namespace GoblinMode
     {
         const int MaxPoints = 35;
         int Points = MaxPoints;
-        Player.MoleSign moleSign = 0;
         UI.Player player;
         List<Image> portraits = new List<Image>();
         private int currentPortrait = 0;
@@ -145,10 +144,11 @@ namespace GoblinMode
                 skitter = player.Skitter,
                 gleam = player.Gleam,
                 portrait = portraits[currentPortrait]
-                
+
             };
             Weapon weapon = new Weapon(0);
-            weapon.damage = 10;
+            weapon.damage = 2;
+            weapon.name = "Fists";
             gamePlayer.currentWeapon = weapon;
             gamePlayer.SetDerived();
             CharacterManager.Instance.SetPlayer(gamePlayer);
@@ -158,20 +158,7 @@ namespace GoblinMode
             this.Close();
         }
 
-        private void MoleSignClick(object sender, EventArgs e)
-        {
-            if (((Control)sender).Name == "NextMoleSign")
-            {
-                moleSign++;
-            }
-            else
-            {
-                moleSign--;
-            }
-            if (((int)moleSign) > 3) { moleSign = 0; }
-            else if (((int)moleSign) < 0) { moleSign = (Player.MoleSign)3; }
-
-        }
+       
 
         private void NextImage(object sender, EventArgs e)
         {

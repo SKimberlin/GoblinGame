@@ -1,6 +1,6 @@
 ﻿namespace GoblinMode
 {
-    partial class TownForm
+    partial class ShopForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,66 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
+            PlayerInventory = new ComboBox();
+            ShopInventory = new ComboBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            comboBox1 = new ComboBox();
             SuspendLayout();
+            // 
+            // PlayerInventory
+            // 
+            PlayerInventory.FormattingEnabled = true;
+            PlayerInventory.Location = new Point(12, 12);
+            PlayerInventory.Name = "PlayerInventory";
+            PlayerInventory.Size = new Size(400, 33);
+            PlayerInventory.TabIndex = 0;
+            // 
+            // ShopInventory
+            // 
+            ShopInventory.FormattingEnabled = true;
+            ShopInventory.Location = new Point(418, 12);
+            ShopInventory.Name = "ShopInventory";
+            ShopInventory.Size = new Size(400, 33);
+            ShopInventory.TabIndex = 1;
             // 
             // button1
             // 
-            button1.Location = new Point(638, 388);
+            button1.Location = new Point(12, 388);
             button1.Name = "button1";
             button1.Size = new Size(150, 50);
-            button1.TabIndex = 0;
-            button1.Text = "Shop";
+            button1.TabIndex = 2;
+            button1.Text = "Sell";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(638, 332);
+            button2.Location = new Point(668, 388);
             button2.Name = "button2";
             button2.Size = new Size(150, 50);
-            button2.TabIndex = 1;
-            button2.Text = "Level Up";
+            button2.TabIndex = 3;
+            button2.Text = "Buy";
             button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(418, 388);
+            button3.Location = new Point(339, 388);
             button3.Name = "button3";
             button3.Size = new Size(200, 50);
-            button3.TabIndex = 2;
-            button3.Text = "Fight Oppenent";
+            button3.TabIndex = 4;
+            button3.Text = "Leave Transaction";
             button3.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 398);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(400, 33);
-            comboBox1.TabIndex = 3;
-            // 
-            // TownForm
+            // ShopForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(comboBox1);
+            ClientSize = new Size(831, 450);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Name = "TownForm";
-            Text = "TownForm";
+            Controls.Add(ShopInventory);
+            Controls.Add(PlayerInventory);
+            Name = "ShopForm";
+            Text = "ShopForm";
             ResumeLayout(false);
         }
 
         #endregion
 
+        private ComboBox PlayerInventory;
+        private ComboBox ShopInventory;
         private Button button1;
         private Button button2;
         private Button button3;
-        private ComboBox comboBox1;
     }
 }

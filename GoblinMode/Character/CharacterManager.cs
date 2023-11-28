@@ -37,7 +37,7 @@ namespace GoblinMode.Character
         {
             foreach (NonPlayableCharacter character in nonPlayableCharacters)
             {
-                if (character.id == id)
+                if (character.GetId() == id)
                 {
                     return character;
                 }
@@ -59,7 +59,7 @@ namespace GoblinMode.Character
         {
             for (int i = 0; i < nonPlayableCharacters.Count; i++)
             {
-                if (nonPlayableCharacters[i].id == id) 
+                if (nonPlayableCharacters[i].GetId() == id) 
                 {
                     nonPlayableCharacters.RemoveAt(i);
                     nonPlayableCharacters.Insert(i, character);
@@ -71,7 +71,7 @@ namespace GoblinMode.Character
         {
             for (int i = 0; i < nonPlayableCharacters.Count; i++) 
             { 
-                if (nonPlayableCharacters[i].id == id) 
+                if (nonPlayableCharacters[i].GetId() == id) 
                 {
                     nonPlayableCharacters.RemoveAt(i); 
                 } 

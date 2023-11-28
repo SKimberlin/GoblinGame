@@ -13,7 +13,7 @@ namespace GoblinMode
 
             Directory.SetCurrentDirectory("../../..");
             ApplicationConfiguration.Initialize();
-            Application.Run(new TitleForm());
+            Game game = new Game();
 
         }
         

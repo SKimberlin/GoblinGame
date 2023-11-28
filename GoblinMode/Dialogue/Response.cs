@@ -12,9 +12,13 @@ namespace GoblinMode.Dialogue
         public Dictionary<string, Response> dialogueOptions { get; set; }
         public Dictionary<string, Func<Form>> formOptions { get; set; }
 
-        public Response() 
+        public Response()
         {
-            formOptions = new Dictionary<string, Func<Form>>();
+        }
+        public Response(string responseText, Dictionary<string, Response> dialogueOptions)
+        {
+            this.responseText = responseText;
+            this.dialogueOptions = dialogueOptions;
         }
     }
 }

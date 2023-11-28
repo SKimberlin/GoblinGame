@@ -8,8 +8,8 @@ namespace GoblinMode.Item
 {
     public class Item
     {
-        float itemWorth;
-        float itemWeight;
-
+        float worth;
+        public float weight;
+        public string name;
     }
 }

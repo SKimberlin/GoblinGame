@@ -9,13 +9,16 @@ namespace GoblinMode.Character
 {
     public class NonPlayableCharacter : Character
     {
-        public int id;
+        private int id;
         private static int lastAssignedId = 0;
         public NonPlayableCharacter()
         {
             id = lastAssignedId++;
         }
-        short PlayerStanding;
+        public int GetId()
+        {
+            return id;
+        }
         public Dialogue.Dialogue dialogue { get; set; }
 
     }

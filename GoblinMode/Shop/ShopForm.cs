@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GoblinMode
 {
-    public partial class TownForm : Form
+    public partial class ShopForm : Form
     {
-        public TownForm()
+        public ShopForm()
         {
             InitializeComponent();
         }

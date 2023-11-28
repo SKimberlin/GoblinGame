@@ -66,178 +66,157 @@
             button2 = new Button();
             button3 = new Button();
             groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
-            pictureBox1 = new PictureBox();
-            NextMoleSign = new Button();
-            PreviousMoleSign = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CharacterPortrait).BeginInit();
             groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(34, 53);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(49, 88);
             label1.Name = "label1";
-            label1.Size = new Size(64, 24);
+            label1.Size = new Size(80, 26);
             label1.TabIndex = 0;
             label1.Text = "Power";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(34, 78);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(49, 130);
             label2.Name = "label2";
-            label2.Size = new Size(63, 24);
+            label2.Size = new Size(78, 26);
             label2.TabIndex = 1;
             label2.Text = "Sneak";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(34, 103);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(49, 172);
             label3.Name = "label3";
-            label3.Size = new Size(38, 24);
+            label3.Size = new Size(50, 26);
             label3.TabIndex = 2;
             label3.Text = "Grit";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(34, 128);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(49, 213);
             label4.Name = "label4";
-            label4.Size = new Size(79, 24);
+            label4.Size = new Size(99, 26);
             label4.TabIndex = 3;
             label4.Text = "Mischief";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(34, 154);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(49, 257);
             label5.Name = "label5";
-            label5.Size = new Size(82, 24);
+            label5.Size = new Size(97, 26);
             label5.TabIndex = 4;
             label5.Text = "Cunning";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(34, 179);
-            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(49, 298);
             label6.Name = "label6";
-            label6.Size = new Size(60, 24);
+            label6.Size = new Size(83, 26);
             label6.TabIndex = 5;
             label6.Text = "Skitter";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(34, 204);
-            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(49, 340);
             label7.Name = "label7";
-            label7.Size = new Size(65, 24);
+            label7.Size = new Size(76, 26);
             label7.TabIndex = 6;
             label7.Text = "Gleam";
             // 
             // PowerPoints
             // 
             PowerPoints.AutoSize = true;
-            PowerPoints.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            PowerPoints.Location = new Point(112, 53);
-            PowerPoints.Margin = new Padding(2, 0, 2, 0);
+            PowerPoints.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            PowerPoints.Location = new Point(160, 88);
             PowerPoints.Name = "PowerPoints";
-            PowerPoints.Size = new Size(20, 24);
+            PowerPoints.Size = new Size(23, 26);
             PowerPoints.TabIndex = 7;
             PowerPoints.Text = "0";
             // 
             // SneakPoints
             // 
             SneakPoints.AutoSize = true;
-            SneakPoints.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            SneakPoints.Location = new Point(112, 78);
-            SneakPoints.Margin = new Padding(2, 0, 2, 0);
+            SneakPoints.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            SneakPoints.Location = new Point(160, 130);
             SneakPoints.Name = "SneakPoints";
-            SneakPoints.Size = new Size(20, 24);
+            SneakPoints.Size = new Size(23, 26);
             SneakPoints.TabIndex = 8;
             SneakPoints.Text = "0";
             // 
             // GritPoints
             // 
             GritPoints.AutoSize = true;
-            GritPoints.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            GritPoints.Location = new Point(112, 103);
-            GritPoints.Margin = new Padding(2, 0, 2, 0);
+            GritPoints.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            GritPoints.Location = new Point(160, 172);
             GritPoints.Name = "GritPoints";
-            GritPoints.Size = new Size(20, 24);
+            GritPoints.Size = new Size(23, 26);
             GritPoints.TabIndex = 9;
             GritPoints.Text = "0";
             // 
             // MischiefPoints
             // 
             MischiefPoints.AutoSize = true;
-            MischiefPoints.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            MischiefPoints.Location = new Point(112, 128);
-            MischiefPoints.Margin = new Padding(2, 0, 2, 0);
+            MischiefPoints.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            MischiefPoints.Location = new Point(160, 213);
             MischiefPoints.Name = "MischiefPoints";
-            MischiefPoints.Size = new Size(20, 24);
+            MischiefPoints.Size = new Size(23, 26);
             MischiefPoints.TabIndex = 10;
             MischiefPoints.Text = "0";
             // 
             // CunningPoints
             // 
             CunningPoints.AutoSize = true;
-            CunningPoints.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            CunningPoints.Location = new Point(112, 154);
-            CunningPoints.Margin = new Padding(2, 0, 2, 0);
+            CunningPoints.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            CunningPoints.Location = new Point(160, 257);
             CunningPoints.Name = "CunningPoints";
-            CunningPoints.Size = new Size(20, 24);
+            CunningPoints.Size = new Size(23, 26);
             CunningPoints.TabIndex = 11;
             CunningPoints.Text = "0";
             // 
             // SkitterPoints
             // 
             SkitterPoints.AutoSize = true;
-            SkitterPoints.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            SkitterPoints.Location = new Point(112, 179);
-            SkitterPoints.Margin = new Padding(2, 0, 2, 0);
+            SkitterPoints.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            SkitterPoints.Location = new Point(160, 298);
             SkitterPoints.Name = "SkitterPoints";
-            SkitterPoints.Size = new Size(20, 24);
+            SkitterPoints.Size = new Size(23, 26);
             SkitterPoints.TabIndex = 12;
             SkitterPoints.Text = "0";
             // 
             // GleamPoints
             // 
             GleamPoints.AutoSize = true;
-            GleamPoints.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            GleamPoints.Location = new Point(112, 204);
-            GleamPoints.Margin = new Padding(2, 0, 2, 0);
+            GleamPoints.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            GleamPoints.Location = new Point(160, 340);
             GleamPoints.Name = "GleamPoints";
-            GleamPoints.Size = new Size(20, 24);
+            GleamPoints.Size = new Size(23, 26);
             GleamPoints.TabIndex = 13;
             GleamPoints.Text = "0";
             // 
             // PowerAddButton
             // 
-            PowerAddButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            PowerAddButton.Location = new Point(132, 50);
-            PowerAddButton.Margin = new Padding(2);
+            PowerAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            PowerAddButton.Location = new Point(189, 83);
             PowerAddButton.Name = "PowerAddButton";
-            PowerAddButton.Size = new Size(25, 22);
+            PowerAddButton.Size = new Size(36, 37);
             PowerAddButton.TabIndex = 14;
             PowerAddButton.Text = "+";
             PowerAddButton.UseVisualStyleBackColor = true;
@@ -275,12 +254,10 @@
             groupBox1.Controls.Add(PowerAddButton);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(PowerPoints);
-            groupBox1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            groupBox1.Location = new Point(389, 7);
-            groupBox1.Margin = new Padding(2);
+            groupBox1.Font = new Font("Ace Attorney", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            groupBox1.Location = new Point(556, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2);
-            groupBox1.Size = new Size(162, 226);
+            groupBox1.Size = new Size(231, 377);
             groupBox1.TabIndex = 15;
             groupBox1.TabStop = false;
             groupBox1.Text = "Stats";
@@ -288,32 +265,29 @@
             // PointsLeftCounter
             // 
             PointsLeftCounter.AutoSize = true;
-            PointsLeftCounter.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            PointsLeftCounter.Location = new Point(112, 26);
-            PointsLeftCounter.Margin = new Padding(2, 0, 2, 0);
+            PointsLeftCounter.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            PointsLeftCounter.Location = new Point(160, 43);
             PointsLeftCounter.Name = "PointsLeftCounter";
-            PointsLeftCounter.Size = new Size(20, 24);
+            PointsLeftCounter.Size = new Size(23, 26);
             PointsLeftCounter.TabIndex = 29;
             PointsLeftCounter.Text = "0";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(9, 26);
-            label16.Margin = new Padding(2, 0, 2, 0);
+            label16.Font = new Font("Ace Attorney", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(13, 43);
             label16.Name = "label16";
-            label16.Size = new Size(100, 24);
+            label16.Size = new Size(134, 26);
             label16.TabIndex = 28;
             label16.Text = "Points Left:";
             // 
             // GleamAddButton
             // 
-            GleamAddButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            GleamAddButton.Location = new Point(132, 201);
-            GleamAddButton.Margin = new Padding(2);
+            GleamAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            GleamAddButton.Location = new Point(189, 335);
             GleamAddButton.Name = "GleamAddButton";
-            GleamAddButton.Size = new Size(25, 22);
+            GleamAddButton.Size = new Size(36, 37);
             GleamAddButton.TabIndex = 27;
             GleamAddButton.Text = "+";
             GleamAddButton.UseVisualStyleBackColor = true;
@@ -321,11 +295,10 @@
             // 
             // SkitterAddButton
             // 
-            SkitterAddButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            SkitterAddButton.Location = new Point(132, 176);
-            SkitterAddButton.Margin = new Padding(2);
+            SkitterAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            SkitterAddButton.Location = new Point(189, 293);
             SkitterAddButton.Name = "SkitterAddButton";
-            SkitterAddButton.Size = new Size(25, 22);
+            SkitterAddButton.Size = new Size(36, 37);
             SkitterAddButton.TabIndex = 26;
             SkitterAddButton.Text = "+";
             SkitterAddButton.UseVisualStyleBackColor = true;
@@ -333,11 +306,10 @@
             // 
             // CunningAddButton
             // 
-            CunningAddButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            CunningAddButton.Location = new Point(132, 151);
-            CunningAddButton.Margin = new Padding(2);
+            CunningAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            CunningAddButton.Location = new Point(189, 252);
             CunningAddButton.Name = "CunningAddButton";
-            CunningAddButton.Size = new Size(25, 22);
+            CunningAddButton.Size = new Size(36, 37);
             CunningAddButton.TabIndex = 25;
             CunningAddButton.Text = "+";
             CunningAddButton.UseVisualStyleBackColor = true;
@@ -345,11 +317,10 @@
             // 
             // MischiefAddButton
             // 
-            MischiefAddButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            MischiefAddButton.Location = new Point(132, 125);
-            MischiefAddButton.Margin = new Padding(2);
+            MischiefAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            MischiefAddButton.Location = new Point(189, 208);
             MischiefAddButton.Name = "MischiefAddButton";
-            MischiefAddButton.Size = new Size(25, 22);
+            MischiefAddButton.Size = new Size(36, 37);
             MischiefAddButton.TabIndex = 24;
             MischiefAddButton.Text = "+";
             MischiefAddButton.UseVisualStyleBackColor = true;
@@ -357,11 +328,10 @@
             // 
             // GritAddButton
             // 
-            GritAddButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            GritAddButton.Location = new Point(132, 100);
-            GritAddButton.Margin = new Padding(2);
+            GritAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            GritAddButton.Location = new Point(189, 167);
             GritAddButton.Name = "GritAddButton";
-            GritAddButton.Size = new Size(25, 22);
+            GritAddButton.Size = new Size(36, 37);
             GritAddButton.TabIndex = 23;
             GritAddButton.Text = "+";
             GritAddButton.UseVisualStyleBackColor = true;
@@ -369,11 +339,10 @@
             // 
             // SneakAddButton
             // 
-            SneakAddButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            SneakAddButton.Location = new Point(132, 75);
-            SneakAddButton.Margin = new Padding(2);
+            SneakAddButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            SneakAddButton.Location = new Point(189, 125);
             SneakAddButton.Name = "SneakAddButton";
-            SneakAddButton.Size = new Size(25, 22);
+            SneakAddButton.Size = new Size(36, 37);
             SneakAddButton.TabIndex = 22;
             SneakAddButton.Text = "+";
             SneakAddButton.UseVisualStyleBackColor = true;
@@ -381,11 +350,10 @@
             // 
             // GleamRemoveButton
             // 
-            GleamRemoveButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            GleamRemoveButton.Location = new Point(4, 201);
-            GleamRemoveButton.Margin = new Padding(2);
+            GleamRemoveButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            GleamRemoveButton.Location = new Point(6, 335);
             GleamRemoveButton.Name = "GleamRemoveButton";
-            GleamRemoveButton.Size = new Size(25, 22);
+            GleamRemoveButton.Size = new Size(36, 37);
             GleamRemoveButton.TabIndex = 21;
             GleamRemoveButton.Text = "-";
             GleamRemoveButton.UseVisualStyleBackColor = true;
@@ -393,11 +361,10 @@
             // 
             // SkitterRemoveButton
             // 
-            SkitterRemoveButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            SkitterRemoveButton.Location = new Point(4, 176);
-            SkitterRemoveButton.Margin = new Padding(2);
+            SkitterRemoveButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            SkitterRemoveButton.Location = new Point(6, 293);
             SkitterRemoveButton.Name = "SkitterRemoveButton";
-            SkitterRemoveButton.Size = new Size(25, 22);
+            SkitterRemoveButton.Size = new Size(36, 37);
             SkitterRemoveButton.TabIndex = 20;
             SkitterRemoveButton.Text = "-";
             SkitterRemoveButton.UseVisualStyleBackColor = true;
@@ -405,11 +372,10 @@
             // 
             // CunningRemoveButton
             // 
-            CunningRemoveButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            CunningRemoveButton.Location = new Point(4, 151);
-            CunningRemoveButton.Margin = new Padding(2);
+            CunningRemoveButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            CunningRemoveButton.Location = new Point(6, 252);
             CunningRemoveButton.Name = "CunningRemoveButton";
-            CunningRemoveButton.Size = new Size(25, 22);
+            CunningRemoveButton.Size = new Size(36, 37);
             CunningRemoveButton.TabIndex = 19;
             CunningRemoveButton.Text = "-";
             CunningRemoveButton.UseVisualStyleBackColor = true;
@@ -417,11 +383,10 @@
             // 
             // MischiefRemoveButton
             // 
-            MischiefRemoveButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            MischiefRemoveButton.Location = new Point(4, 125);
-            MischiefRemoveButton.Margin = new Padding(2);
+            MischiefRemoveButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            MischiefRemoveButton.Location = new Point(6, 208);
             MischiefRemoveButton.Name = "MischiefRemoveButton";
-            MischiefRemoveButton.Size = new Size(25, 22);
+            MischiefRemoveButton.Size = new Size(36, 37);
             MischiefRemoveButton.TabIndex = 18;
             MischiefRemoveButton.Text = "-";
             MischiefRemoveButton.UseVisualStyleBackColor = true;
@@ -429,11 +394,10 @@
             // 
             // GritRemoveButton
             // 
-            GritRemoveButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            GritRemoveButton.Location = new Point(4, 100);
-            GritRemoveButton.Margin = new Padding(2);
+            GritRemoveButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            GritRemoveButton.Location = new Point(6, 167);
             GritRemoveButton.Name = "GritRemoveButton";
-            GritRemoveButton.Size = new Size(25, 22);
+            GritRemoveButton.Size = new Size(36, 37);
             GritRemoveButton.TabIndex = 17;
             GritRemoveButton.Text = "-";
             GritRemoveButton.UseVisualStyleBackColor = true;
@@ -441,11 +405,10 @@
             // 
             // SneakRemoveButton
             // 
-            SneakRemoveButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            SneakRemoveButton.Location = new Point(4, 75);
-            SneakRemoveButton.Margin = new Padding(2);
+            SneakRemoveButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            SneakRemoveButton.Location = new Point(6, 125);
             SneakRemoveButton.Name = "SneakRemoveButton";
-            SneakRemoveButton.Size = new Size(25, 22);
+            SneakRemoveButton.Size = new Size(36, 37);
             SneakRemoveButton.TabIndex = 16;
             SneakRemoveButton.Text = "-";
             SneakRemoveButton.UseVisualStyleBackColor = true;
@@ -453,11 +416,10 @@
             // 
             // PowerRemoveButton
             // 
-            PowerRemoveButton.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            PowerRemoveButton.Location = new Point(4, 50);
-            PowerRemoveButton.Margin = new Padding(2);
+            PowerRemoveButton.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            PowerRemoveButton.Location = new Point(6, 83);
             PowerRemoveButton.Name = "PowerRemoveButton";
-            PowerRemoveButton.Size = new Size(25, 22);
+            PowerRemoveButton.Size = new Size(36, 37);
             PowerRemoveButton.TabIndex = 15;
             PowerRemoveButton.Text = "-";
             PowerRemoveButton.UseVisualStyleBackColor = true;
@@ -466,30 +428,27 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label15.Location = new Point(8, 5);
-            label15.Margin = new Padding(2, 0, 2, 0);
+            label15.Font = new Font("Ace Attorney", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label15.Location = new Point(11, 8);
             label15.Name = "label15";
-            label15.Size = new Size(82, 29);
+            label15.Size = new Size(92, 34);
             label15.TabIndex = 16;
             label15.Text = "Name";
             // 
             // NameBox
             // 
             NameBox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            NameBox.Location = new Point(77, 5);
-            NameBox.Margin = new Padding(2);
+            NameBox.Location = new Point(110, 8);
             NameBox.Name = "NameBox";
-            NameBox.Size = new Size(285, 29);
+            NameBox.Size = new Size(405, 39);
             NameBox.TabIndex = 17;
             // 
             // button1
             // 
-            button1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(372, 244);
-            button1.Margin = new Padding(2);
+            button1.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(531, 407);
             button1.Name = "button1";
-            button1.Size = new Size(179, 19);
+            button1.Size = new Size(256, 32);
             button1.TabIndex = 30;
             button1.Text = "Create Character";
             button1.UseVisualStyleBackColor = true;
@@ -497,21 +456,19 @@
             // 
             // CharacterPortrait
             // 
-            CharacterPortrait.Location = new Point(14, 25);
-            CharacterPortrait.Margin = new Padding(2);
+            CharacterPortrait.Location = new Point(20, 42);
             CharacterPortrait.Name = "CharacterPortrait";
-            CharacterPortrait.Size = new Size(134, 144);
+            CharacterPortrait.Size = new Size(191, 240);
             CharacterPortrait.SizeMode = PictureBoxSizeMode.Zoom;
             CharacterPortrait.TabIndex = 31;
             CharacterPortrait.TabStop = false;
             // 
             // button2
             // 
-            button2.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(87, 172);
-            button2.Margin = new Padding(2);
+            button2.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(124, 287);
             button2.Name = "button2";
-            button2.Size = new Size(62, 19);
+            button2.Size = new Size(89, 32);
             button2.TabIndex = 32;
             button2.Text = ">";
             button2.UseVisualStyleBackColor = true;
@@ -519,11 +476,10 @@
             // 
             // button3
             // 
-            button3.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(14, 172);
-            button3.Margin = new Padding(2);
+            button3.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(20, 287);
             button3.Name = "button3";
-            button3.Size = new Size(62, 19);
+            button3.Size = new Size(89, 32);
             button3.TabIndex = 33;
             button3.Text = "<";
             button3.UseVisualStyleBackColor = true;
@@ -534,84 +490,30 @@
             groupBox2.Controls.Add(CharacterPortrait);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(button3);
-            groupBox2.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            groupBox2.Location = new Point(19, 37);
-            groupBox2.Margin = new Padding(2);
+            groupBox2.Font = new Font("Ace Attorney", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            groupBox2.Location = new Point(161, 62);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(2);
-            groupBox2.Size = new Size(163, 226);
+            groupBox2.Size = new Size(233, 377);
             groupBox2.TabIndex = 34;
             groupBox2.TabStop = false;
             groupBox2.Text = "Portrait";
             // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(pictureBox1);
-            groupBox3.Controls.Add(NextMoleSign);
-            groupBox3.Controls.Add(PreviousMoleSign);
-            groupBox3.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            groupBox3.Location = new Point(198, 37);
-            groupBox3.Margin = new Padding(2);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(2);
-            groupBox3.Size = new Size(163, 226);
-            groupBox3.TabIndex = 35;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Mole Sign";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(27, 25);
-            pictureBox1.Margin = new Padding(2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(112, 96);
-            pictureBox1.TabIndex = 31;
-            pictureBox1.TabStop = false;
-            // 
-            // NextMoleSign
-            // 
-            NextMoleSign.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            NextMoleSign.Location = new Point(89, 124);
-            NextMoleSign.Margin = new Padding(2);
-            NextMoleSign.Name = "NextMoleSign";
-            NextMoleSign.Size = new Size(50, 19);
-            NextMoleSign.TabIndex = 32;
-            NextMoleSign.Text = ">";
-            NextMoleSign.UseVisualStyleBackColor = true;
-            NextMoleSign.Click += MoleSignClick;
-            // 
-            // PreviousMoleSign
-            // 
-            PreviousMoleSign.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            PreviousMoleSign.Location = new Point(27, 124);
-            PreviousMoleSign.Margin = new Padding(2);
-            PreviousMoleSign.Name = "PreviousMoleSign";
-            PreviousMoleSign.Size = new Size(50, 19);
-            PreviousMoleSign.TabIndex = 33;
-            PreviousMoleSign.Text = "<";
-            PreviousMoleSign.UseVisualStyleBackColor = true;
-            PreviousMoleSign.Click += MoleSignClick;
-            // 
             // CharacterCreate
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 270);
-            Controls.Add(groupBox3);
+            ClientSize = new Size(800, 450);
             Controls.Add(groupBox2);
             Controls.Add(button1);
             Controls.Add(NameBox);
             Controls.Add(label15);
             Controls.Add(groupBox1);
-            Margin = new Padding(2);
             Name = "CharacterCreate";
             Text = "Form1";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)CharacterPortrait).EndInit();
             groupBox2.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -656,9 +558,5 @@
         private Button button2;
         private Button button3;
         private GroupBox groupBox2;
-        private GroupBox groupBox3;
-        private PictureBox pictureBox1;
-        private Button NextMoleSign;
-        private Button PreviousMoleSign;
     }
 }
