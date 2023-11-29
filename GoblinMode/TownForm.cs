@@ -36,21 +36,10 @@ namespace GoblinMode
             }
         }
 
-        private void OpenShop(object sender, EventArgs e)
-        {
-            Shop.Shop.Instance.OpenShopForm();
-            Town.Instance.CloseTownForm();
-        }
-
         private void GetHelp(object sender, EventArgs e)
         {
             DialogueForm form = new DialogueForm(CharacterManager.Instance.GetCharacterByID(0));
             form.ShowDialog();
-        }
-
-        private void LevelUp(object sender, EventArgs e)
-        {
-
         }
 
         private void Fight(object sender, EventArgs e)
@@ -67,12 +56,6 @@ namespace GoblinMode
             Town.Instance.PopulateEnemies(5);
         }
 
-        private void OpenInventory(object sender, EventArgs e)
-        {
-            /*
-            InventoryForm inventoryForm = new InventoryForm();
-            inventoryForm.ShowDialog();*/
-        }
         private void Town_EnemiesListChanged(object sender, EventArgs e)
         {
             UpdateCombobox();

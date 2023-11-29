@@ -130,8 +130,8 @@ namespace GoblinMode
 
         private void CreateCharacter(object sender, EventArgs e)
         {
-            //if (Points != 0) return;
-            //if (String.IsNullOrEmpty(player.Name)) return;
+            if (Points != 0) return;
+            if (String.IsNullOrEmpty(player.Name)) return;
 
             Player gamePlayer = new Player()
             {

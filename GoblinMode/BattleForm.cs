@@ -30,11 +30,6 @@ namespace GoblinMode
             UpdateUI();
         }
 
-        private void Inventory(object sender, EventArgs e)
-        {
-            UpdateUI();
-        }
-
         private void Run(object sender, EventArgs e)
         {
             BattleController.Instance.Run();

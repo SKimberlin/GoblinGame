@@ -34,7 +34,6 @@
             PlayerPortrait = new PictureBox();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
             button4 = new Button();
             PlayerHealth = new Label();
             NPCHealth = new Label();
@@ -102,17 +101,6 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += Run;
             // 
-            // button3
-            // 
-            button3.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(496, 313);
-            button3.Name = "button3";
-            button3.Size = new Size(256, 32);
-            button3.TabIndex = 45;
-            button3.Text = "Inventory";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += Inventory;
-            // 
             // button4
             // 
             button4.Font = new Font("Ace Attorney", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -149,10 +137,10 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            ControlBox = false;
             Controls.Add(NPCHealth);
             Controls.Add(PlayerHealth);
             Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(NPCNameBox);
@@ -175,7 +163,6 @@
         private PictureBox PlayerPortrait;
         private Button button1;
         private Button button2;
-        private Button button3;
         private Button button4;
         private Label PlayerHealth;
         private Label NPCHealth;
