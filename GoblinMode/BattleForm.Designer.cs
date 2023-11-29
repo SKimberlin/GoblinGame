@@ -76,6 +76,7 @@
             PlayerPortrait.Location = new Point(36, 192);
             PlayerPortrait.Name = "PlayerPortrait";
             PlayerPortrait.Size = new Size(192, 240);
+            PlayerPortrait.SizeMode = PictureBoxSizeMode.Zoom;
             PlayerPortrait.TabIndex = 39;
             PlayerPortrait.TabStop = false;
             // 

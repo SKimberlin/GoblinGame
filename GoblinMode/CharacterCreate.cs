@@ -146,15 +146,15 @@ namespace GoblinMode
                 portrait = portraits[currentPortrait]
 
             };
-            Weapon weapon = new Weapon(0);
-            weapon.damage = 2;
-            weapon.name = "Fists";
-            gamePlayer.currentWeapon = weapon;
+            Weapon weapon = new Weapon();
+            weapon.SetDamage(2.5f);
+            weapon.SetName("Brawling Fists");
+            weapon.SetRemoveable(false);
+            gamePlayer.setCurrentWeapon(weapon);
             gamePlayer.SetDerived();
             CharacterManager.Instance.SetPlayer(gamePlayer);
 
-            DialogueForm dialogueForm = new DialogueForm(CharacterManager.Instance.GetCharacterByID(0));
-            dialogueForm.Show();
+            Town.Instance.OpenTownForm();
             this.Close();
         }
 

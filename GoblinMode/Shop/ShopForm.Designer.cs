@@ -75,8 +75,9 @@
             button3.Name = "button3";
             button3.Size = new Size(200, 50);
             button3.TabIndex = 4;
-            button3.Text = "Leave Transaction";
+            button3.Text = "Go Back To Town";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += LeaveShop;
             // 
             // ShopForm
             // 

@@ -10,9 +10,8 @@ using System.Threading.Tasks;
 
 namespace GoblinMode.Character
 {
-    public class Character
+    public abstract class Character
     {
-        const int STAT_MAX = 999;
         
         public Character() { }
         public Character(int power, int sneak, int grit, int mischief, int cunning, int skitter, int gleam) 
@@ -24,29 +23,18 @@ namespace GoblinMode.Character
         {
             maxHealth = 100 + (this.power * 0.5) + this.grit;
             pocketSize = 50 + this.power + this.grit;
+            currentHealth = maxHealth;
         }
 
         public string name { get; set; }
         public Image portrait;
-        public Weapon currentWeapon;
-        private List<Item.Item> inventory;
+        private Weapon currentWeapon;
+        private List<Item.Item> inventory = new List<Item.Item>();
+        private float totalWeight;
 
         public List<Item.Item> GetItems() { return inventory; }
 
-        public void AddItemToInventory(Item.Item newItem)
-        {
-            float totalWeight = 0;
-            foreach (Item.Item item in inventory) 
-            {
-                totalWeight += item.weight;
-            }
-            if ((totalWeight + newItem.weight) < pocketSize) inventory.Add(newItem);
-        }
-
-        public void RemoveItemFromInventory(Item.Item item)
-        {
-            inventory.Remove(item);
-        }
+        
         // Main Stats
         public int power { get; set; }    // Strength
         public int sneak { get; set; }    // Stealth
@@ -57,9 +45,32 @@ namespace GoblinMode.Character
         public int gleam { get; set; }    // Luck/Treasure finding
 
         // Derived Stats
-        float pocketSize;
-        public double maxHealth;
-        public float currentHealth;
+        private float pocketSize;
+        private double maxHealth;
+        private double currentHealth;
+
+        public double getCurrentHealth() { return currentHealth; }
+        public void TakeDamage(double damage) { currentHealth -= damage; }
+        public void SetHealthToMax() { currentHealth = maxHealth; }
+        public double getMaxHealth() { return maxHealth; }
+        public double getPocketSize() { return pocketSize; }
+        public Weapon getCurrentWeapon() { return currentWeapon; }
+        public void setCurrentWeapon(Weapon weapon) {  currentWeapon = weapon; }
+
+        public void AddItemToInventory(Item.Item newItem)
+        {
+            totalWeight = 0;
+            foreach (Item.Item item in inventory)
+            {
+                totalWeight += item.GetWeight();
+            }
+            if ((totalWeight + newItem.GetWeight()) < pocketSize) inventory.Add(newItem);
+        }
+
+        public void RemoveItemFromInventory(Item.Item item)
+        {
+            if (item.IsRemoveable()) inventory.Remove(item);
+        }
 
     }
 }

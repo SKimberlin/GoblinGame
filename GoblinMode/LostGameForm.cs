@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace GoblinMode
 {
-    public partial class ShopForm : Form
+    public partial class LostGameForm : Form
     {
-        public ShopForm()
+        public LostGameForm()
         {
             InitializeComponent();
         }
 
-        private void LeaveShop(object sender, EventArgs e)
+        private void CloseGame(object sender, EventArgs e)
         {
-            Town.Instance.OpenTownForm();
-            Shop.Shop.Instance.CloseShopForm();
+            Application.Exit();
+        }
+
+        private void StartNewRun(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,13 +13,16 @@ namespace GoblinMode.Character
     public class Player : Character
     {
         
-        int level;
-        float exp;
+        private int level = 1;
+        private float exp;
+        private float money;
 
         public void LevelUp()
         {
-
+            
         }
+
+        public int GetLevel() { return level; }
 
     }
 }

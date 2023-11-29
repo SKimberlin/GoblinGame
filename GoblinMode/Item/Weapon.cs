@@ -8,20 +8,10 @@ namespace GoblinMode.Item
 {
     public class Weapon : Item
     {
-        enum WeaponType
-        {
-            Sword,
-            Dagger,
-            Bow,
-            Staff,
-            Axe,
-            Mace,
-            Shield
-        }
+        
+        private float damage;
 
-        WeaponType type { get; set; }
-        public float damage;
-        public Weapon(int type) { this.type = (WeaponType)type; }
-
+        public void SetDamage(float damage) { this.damage = damage; }
+        public float GetDamage() { return this.damage; }
     }
 }

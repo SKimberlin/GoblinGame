@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace GoblinMode
 {
-    public partial class ShopForm : Form
+    public partial class LevelUpForm : Form
     {
-        public ShopForm()
+        public LevelUpForm()
         {
             InitializeComponent();
-        }
-
-        private void LeaveShop(object sender, EventArgs e)
-        {
-            Town.Instance.OpenTownForm();
-            Shop.Shop.Instance.CloseShopForm();
         }
     }
 }

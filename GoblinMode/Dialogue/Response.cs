@@ -10,7 +10,6 @@ namespace GoblinMode.Dialogue
     {
         public string responseText { get; set; }
         public Dictionary<string, Response> dialogueOptions { get; set; }
-        public Dictionary<string, Func<Form>> formOptions { get; set; }
 
         public Response()
         {

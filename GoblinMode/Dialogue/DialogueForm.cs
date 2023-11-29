@@ -60,14 +60,6 @@ namespace GoblinMode
         {
             if (String.IsNullOrEmpty(PlayerResponseBox.Text)) return;
 
-            if (currentResponse.formOptions.TryGetValue(PlayerResponseBox.Text, out var formFactory))
-            {
-                Form form = formFactory.Invoke();
-                form.Show();
-                Close();
-                return;
-            }
-
             currentResponse = currentResponse.dialogueOptions[PlayerResponseBox.Text];
 
             UpdateUI();
@@ -88,13 +80,12 @@ namespace GoblinMode
                     PlayerResponseBox.Items.Add(option);
                 }
             }
-            if (currentResponse.formOptions != null)
-            {
-                foreach (var option in currentResponse.formOptions.Keys)
-                {
-                    PlayerResponseBox.Items.Add(option);
-                }
-            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
