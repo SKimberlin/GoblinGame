@@ -61,5 +61,20 @@ namespace GoblinMode
                 }
             }
         }
+
+        public void Rest()
+        {
+            CharacterManager.Instance.GetPlayer().SetHealthToMax();
+        }
+
+        public void StartFight(NonPlayableCharacter selectedNPC)
+        {
+            BattleController.Instance.StartBattle(selectedNPC);
+        }
+        public void GetHelp()
+        {
+            DialogueForm form = new DialogueForm(CharacterManager.Instance.GetCharacterByID(0));
+            form.ShowDialog();
+        }
     }
 }

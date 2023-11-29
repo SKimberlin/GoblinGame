@@ -38,15 +38,12 @@ namespace GoblinMode
 
         private void GetHelp(object sender, EventArgs e)
         {
-            DialogueForm form = new DialogueForm(CharacterManager.Instance.GetCharacterByID(0));
-            form.ShowDialog();
+            Town.Instance.GetHelp();
         }
 
         private void Fight(object sender, EventArgs e)
         {
-            NonPlayableCharacter selectedNPC = EnemyBox.SelectedItem as NonPlayableCharacter;
-
-            BattleController.Instance.StartBattle(selectedNPC);
+            Town.Instance.StartFight(EnemyBox.SelectedItem as NonPlayableCharacter);
         }
 
         private void TownForm_Shown(object sender, EventArgs e)
@@ -68,7 +65,7 @@ namespace GoblinMode
 
         private void Rest(object sender, EventArgs e)
         {
-            CharacterManager.Instance.GetPlayer().SetHealthToMax();
+            Town.Instance.Rest();
         }
     }
 }
