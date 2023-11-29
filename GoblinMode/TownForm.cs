@@ -24,11 +24,11 @@ namespace GoblinMode
 
             if (enemies != null)
             {
-                EnemyBox.DisplayMember = "Name";
+                EnemyBox.DisplayMember = "name";
 
                 EnemyBox.DataSource = enemies.ToList();
 
-                EnemyBox.DisplayMember = "Name";
+                EnemyBox.DisplayMember = "name";
             }
             else
             {

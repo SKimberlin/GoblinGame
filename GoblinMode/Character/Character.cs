@@ -1,9 +1,11 @@
 ﻿using GoblinMode.Item;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -12,7 +14,7 @@ namespace GoblinMode.Character
 {
     public abstract class Character
     {
-        
+
         public Character() { }
         public Character(int power, int sneak, int grit, int mischief, int cunning, int skitter, int gleam) 
         { 
@@ -27,7 +29,7 @@ namespace GoblinMode.Character
         }
 
         public string name { get; set; }
-        public Image portrait;
+        private Image portrait;
         private Weapon currentWeapon;
         private List<Item.Item> inventory = new List<Item.Item>();
         private float totalWeight;
@@ -49,6 +51,11 @@ namespace GoblinMode.Character
         private double maxHealth;
         private double currentHealth;
 
+
+        public string GetName() { return name; }
+        public void SetName(string name) {  this.name = name; }
+        public Image GetPortrait() { return portrait; }
+        public void SetPortrait(Image portrait) { this.portrait = portrait;}
         public double getCurrentHealth() { return currentHealth; }
         public void TakeDamage(double damage) { currentHealth -= damage; }
         public void SetHealthToMax() { currentHealth = maxHealth; }

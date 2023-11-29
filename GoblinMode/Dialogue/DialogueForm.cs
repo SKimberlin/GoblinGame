@@ -33,22 +33,22 @@ namespace GoblinMode
 
         private void InitializeDialogue()
         {
-            if (currentNPC.name != null)
+            if (currentNPC.GetName() != null)
             {
-                NPCNameBox.Text = currentNPC.name;
+                NPCNameBox.Text = currentNPC.GetName();
                 NPCNameBox.Location = new Point(NPCNameBox.Location.X - NPCNameBox.Width, NPCNameBox.Location.Y);
             }
-            if (currentNPC.portrait != null)
+            if (currentNPC.GetPortrait() != null)
             {
-                NPCPortrait.Image = currentNPC.portrait;
+                NPCPortrait.Image = currentNPC.GetPortrait();
             }
-            if (player.name != null)
+            if (player.GetName() != null)
             {
-                PlayerNameBox.Text = player.name;
+                PlayerNameBox.Text = player.GetName();
             }
-            if (player.portrait != null)
+            if (player.GetPortrait() != null)
             {
-                PlayerPortrait.Image = player.portrait;
+                PlayerPortrait.Image = player.GetPortrait();
             }
             x = DialogueBox.Location.X;
             DialogueBox.Location = new Point(x - DialogueBox.Width, DialogueBox.Location.Y);

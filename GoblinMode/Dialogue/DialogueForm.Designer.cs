@@ -122,6 +122,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(751, 438);
+            ControlBox = false;
             Controls.Add(button1);
             Controls.Add(ResponseButton);
             Controls.Add(PlayerResponseBox);

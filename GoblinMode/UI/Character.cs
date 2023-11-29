@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GoblinMode.UI
 {
-    internal class Player : INotifyPropertyChanged
+    public class Character : INotifyPropertyChanged
     {
         private string _name;
         private int _power;   
@@ -20,7 +20,7 @@ namespace GoblinMode.UI
         private int _gleam;
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public Player() 
+        public Character() 
         {
             _name = "";
             _power = 0;
@@ -38,7 +38,6 @@ namespace GoblinMode.UI
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
-
         }
 
         public string Name { get { return _name; } set { _name = value; NotifyPropertyChanged(); } }

@@ -17,25 +17,25 @@ namespace GoblinMode
             switch (random.Next(0, 3))
             {
                 case 0:
-                    enemy.name = "Angry Goober";
+                    enemy.SetName("Angry Goober");
                     break;
                 case 1:
-                    enemy.name = "Hateful Goober";
+                    enemy.SetName("Hateful Goober");
                     break;
                 case 2:
-                    enemy.name = "Wacky Goober";
+                    enemy.SetName("Wacky Goober");
                     break;
                 case 3:
-                    enemy.name = "Sassy Goober";
+                    enemy.SetName("Sassy Goober");
                     break;
             }
             switch (random.Next(0, 1))
             {
                 case 0:
-                    enemy.portrait = Image.FromFile("assets/GoblinMale.jpg");
+                    enemy.SetPortrait(Image.FromFile("assets/GoblinMale.jpg"));
                     break;
                 case 1:
-                    enemy.portrait = Image.FromFile("assets/GoblinFemale.jpg");
+                    enemy.SetPortrait(Image.FromFile("assets/GoblinFemale.jpg"));
                     break;
             }
             enemy.power = (int)(diffuculty * random.NextDouble());

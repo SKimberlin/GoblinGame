@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,53 +17,47 @@ namespace GoblinMode
     public partial class BattleForm : Form
     {
         private int healthX;
-        NonPlayableCharacter currentNPC;
+        private UI.Combatant currentNPCUI;
+        private UI.Combatant playerUI;
 
         public BattleForm()
         {
             InitializeComponent();
             InitializeUI();
         }
+        private void InitializeUI()
+        {
+            playerUI = BattleController.Instance.GetPlayerUI();
+            currentNPCUI = BattleController.Instance.GetCurrentNPCUI();
+
+            NPCNameBox.DataBindings.Add("Text", currentNPCUI, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
+            NPCPortrait.DataBindings.Add("Image", currentNPCUI, "Portrait", false, DataSourceUpdateMode.OnPropertyChanged);
+            NPCCurrentHealth.DataBindings.Add("Text", currentNPCUI, "CurrentHealth", false, DataSourceUpdateMode.OnPropertyChanged);
+            NPCMaxHealth.DataBindings.Add("Text", currentNPCUI, "MaxHealth", false, DataSourceUpdateMode.OnPropertyChanged);
+
+            PlayerNameBox.DataBindings.Add("Text", playerUI, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
+            PlayerPortrait.DataBindings.Add("Image", playerUI, "Portrait", false, DataSourceUpdateMode.OnPropertyChanged);
+            PlayerCurrentHealth.DataBindings.Add("Text", playerUI, "CurrentHealth", false, DataSourceUpdateMode.OnPropertyChanged);
+            PlayerMaxHealth.DataBindings.Add("Text", playerUI, "MaxHealth", false, DataSourceUpdateMode.OnPropertyChanged);
+
+            NPCNameBox.Location = new Point(NPCNameBox.Location.X - (int)(NPCNameBox.Width * 1.5), NPCNameBox.Location.Y);
+            healthX = NPCCurrentHealth.Location.X;
+
+        }
 
         private void Attack(object sender, EventArgs e)
         {
             BattleController.Instance.Attack();
-            UpdateUI();
         }
 
         private void Run(object sender, EventArgs e)
         {
             BattleController.Instance.Run();
-            UpdateUI();
         }
 
         private void Block(object sender, EventArgs e)
         {
             BattleController.Instance.Block();
-            UpdateUI();
-        }
-
-        private void InitializeUI()
-        {
-            NPCNameBox.Text = BattleController.Instance.GetEnemy().name;
-            NPCNameBox.Location = new Point(NPCNameBox.Location.X - NPCNameBox.Width, NPCNameBox.Location.Y);
-            NPCPortrait.Image = BattleController.Instance.GetEnemy().portrait;
-
-            PlayerNameBox.Text = BattleController.Instance.GetPlayer().name;
-            PlayerPortrait.Image = BattleController.Instance.GetPlayer().portrait;
-
-            healthX = NPCHealth.Location.X;
-
-            UpdateUI();
-        }
-
-        private void UpdateUI()
-        {
-
-            NPCHealth.Text = Math.Round(BattleController.Instance.GetEnemy().getCurrentHealth(), 2) + "/" + BattleController.Instance.GetEnemy().getMaxHealth();
-            NPCHealth.Location = new Point(healthX - NPCHealth.Width, NPCHealth.Location.Y);
-            PlayerHealth.Text = Math.Round(BattleController.Instance.GetPlayer().getCurrentHealth(), 2) + "/" + BattleController.Instance.GetPlayer().getMaxHealth();
-
         }
 
 

@@ -48,7 +48,7 @@ namespace GoblinMode.Character
         {
             foreach (NonPlayableCharacter character in nonPlayableCharacters)
             {
-                if (character.name == name)
+                if (character.GetName() == name)
                 {
                     return character;
                 }

@@ -9,6 +9,8 @@ namespace GoblinMode
 {
     public class BattleController
     {
+        private GoblinMode.UI.Combatant playerUI;
+        private GoblinMode.UI.Combatant currentNPCUI;
         private static BattleController instance;
         private NonPlayableCharacter currentNPC;
         private System.Random random = new System.Random();
@@ -43,7 +45,10 @@ namespace GoblinMode
             npcAttackBuff = 1 + (currentNPC.power * 0.01f);
             playerDefenseBuff = Math.Min(1 - (player.grit * 0.01f), 0.20f);
             npcDefenseBuff = Math.Min(1 - (currentNPC.grit * 0.01f), 0.20f);
-            
+
+            currentNPCUI = new GoblinMode.UI.Combatant(npc.GetName(), npc.GetPortrait(), npc.getMaxHealth(), npc.getCurrentHealth() ); 
+            playerUI = new GoblinMode.UI.Combatant(player.GetName(), player.GetPortrait(), player.getMaxHealth(), player.getCurrentHealth() );
+
             form = new BattleForm();
             form.ShowDialog();
         }
@@ -60,6 +65,7 @@ namespace GoblinMode
             {
                 currentNPC.TakeDamage(damage);
             }
+            currentNPCUI.CurrentHealth = Math.Round(currentNPC.getCurrentHealth(), 2);
             if (currentNPC.getCurrentHealth() < 0) { Win(); }
             NPCTurn();
         }
@@ -97,6 +103,7 @@ namespace GoblinMode
                     {
                         player.TakeDamage(damage);
                     }
+                    playerUI.CurrentHealth = Math.Round(player.getCurrentHealth(), 2);
                 }
                 else
                 {
@@ -123,5 +130,7 @@ namespace GoblinMode
         {
             form.Close();
         }
+        public GoblinMode.UI.Combatant GetPlayerUI() { return playerUI; }
+        public GoblinMode.UI.Combatant GetCurrentNPCUI() { return currentNPCUI; }
     }
 }

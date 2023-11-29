@@ -9,7 +9,7 @@ namespace GoblinMode
     {
         const int MaxPoints = 35;
         int Points = MaxPoints;
-        UI.Player player;
+        UI.Character player;
         List<Image> portraits = new List<Image>();
         private int currentPortrait = 0;
         public CharacterCreate()
@@ -19,7 +19,7 @@ namespace GoblinMode
             InitializeComponent();
             PointsLeftCounter.Text = Points.ToString();
             CharacterPortrait.Image = portraits[currentPortrait];
-            player = new UI.Player();
+            player = new UI.Character();
 
             NameBox.DataBindings.Add("Text", player, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
             PowerPoints.DataBindings.Add("Text", player, "Power", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -130,22 +130,23 @@ namespace GoblinMode
 
         private void CreateCharacter(object sender, EventArgs e)
         {
-            if (Points != 0) return;
-            if (String.IsNullOrEmpty(player.Name)) return;
+            //if (Points != 0) return;
+            //if (String.IsNullOrEmpty(player.Name)) return;
 
             Player gamePlayer = new Player()
             {
-                name = player.Name,
                 power = player.Power,
                 sneak = player.Sneak,
                 grit = player.Grit,
                 mischief = player.Mischief,
                 cunning = player.Cunning,
                 skitter = player.Skitter,
-                gleam = player.Gleam,
-                portrait = portraits[currentPortrait]
+                gleam = player.Gleam
 
             };
+
+            gamePlayer.SetName(player.Name);
+            gamePlayer.SetPortrait(portraits[currentPortrait]);
             Weapon weapon = new Weapon();
             weapon.SetDamage(2.5f);
             weapon.SetName("Brawling Fists");

@@ -22,8 +22,8 @@ namespace GoblinMode
             
             {
                 NonPlayableCharacter npc = new NonPlayableCharacter();
-                npc.name = "Wise Old Gob";
-                npc.portrait = Image.FromFile("assets/mogus.jpg");
+                npc.SetName("Wise Old Gob");
+                npc.SetPortrait(Image.FromFile("assets/mogus.jpg"));
                 Dialogue.Dialogue dialogue = new Dialogue.Dialogue();
                 Response helpResponse = new Response();
                 helpResponse.responseText = "You can fight opponenents, and rest to get health back";
