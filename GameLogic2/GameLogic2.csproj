@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\GoblinFemale.jpg" />
+    <None Remove="Assets\GoblinMale.jpg" />
+    <None Remove="Assets\mogus.jpg" />
+    <None Remove="Assets\TownImage.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\GoblinFemale.jpg" />
+    <Content Include="Assets\GoblinMale.jpg" />
+    <Content Include="Assets\mogus.jpg" />
+    <Content Include="Assets\TownImage.jpg" />
+  </ItemGroup>
+
+</Project>

@@ -10,15 +10,15 @@ namespace GoblinMode
         const int MaxPoints = 35;
         int Points = MaxPoints;
         UI.Character player;
-        List<Image> portraits = new List<Image>();
+        List<string> portraits = new List<string>();
         private int currentPortrait = 0;
         public CharacterCreate()
         {
-            portraits.Add(Image.FromFile("Assets/GoblinMale.jpg"));
-            portraits.Add(Image.FromFile("Assets/GoblinFemale.jpg"));
+            portraits.Add("Assets/GoblinMale.jpg");
+            portraits.Add("Assets/GoblinFemale.jpg");
             InitializeComponent();
             PointsLeftCounter.Text = Points.ToString();
-            CharacterPortrait.Image = portraits[currentPortrait];
+            CharacterPortrait.Image = Image.FromFile(portraits[currentPortrait]);
             player = new UI.Character();
 
             NameBox.DataBindings.Add("Text", player, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -155,7 +155,8 @@ namespace GoblinMode
             gamePlayer.SetDerived();
             CharacterManager.Instance.SetPlayer(gamePlayer);
 
-            Town.Instance.OpenTownForm();
+            TownForm form = new TownForm();
+            form.Show();
             this.Close();
         }
 
@@ -166,7 +167,7 @@ namespace GoblinMode
             if (currentPortrait < portraits.Count - 1)
             {
                 currentPortrait++;
-                CharacterPortrait.Image = portraits[currentPortrait];
+                CharacterPortrait.Image = Image.FromFile(portraits[currentPortrait]);
             }
         }
 
@@ -175,7 +176,7 @@ namespace GoblinMode
             if (currentPortrait > 0)
             {
                 currentPortrait--;
-                CharacterPortrait.Image = portraits[currentPortrait];
+                CharacterPortrait.Image = Image.FromFile(portraits[currentPortrait]);
             }
         }
     }

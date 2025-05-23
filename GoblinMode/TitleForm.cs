@@ -1,7 +1,7 @@
 ﻿using GoblinMode.Character;
 using GoblinMode.Dialogue;
 using GoblinMode.Item;
-using GoblinMode.UI;
+using UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

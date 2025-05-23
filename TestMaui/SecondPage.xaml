@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestMaui.CharacterCreatePage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Button
+    x:Name="CounterBtn"
+    Text="Click me"
+    SemanticProperties.Hint="Counts the number of times you click"
+    Clicked="OnCounterClicked"
+    HorizontalOptions="Center" />
+            <Entry
+    x:Name="NameBox" />
+            <Label
+    x:Name="PointsLeftCounter" />
+            <Label 
+    x:Name="PowerPoints" />
+            <Label 
+    x:Name="SneakPoints" />
+            <Label 
+    x:Name="GritPoints" 
+    Text="0" />
+            <Label 
+    x:Name="MischiefPoints" 
+    Text="0" />
+            <Label 
+    x:Name="CunningPoints" 
+    Text="0" />
+            <Label 
+    x:Name="SkitterPoints" 
+    Text="0" />
+            <Label 
+    x:Name="GleamPoints" 
+    Text="0" />
+            <Image
+    x:Name="CharacterPortrait" />
+            <Button
+    x:Name="CreateCharacterButton"
+    Text="Create Character" 
+    Clicked="OnCreateCharacterClicked"
+    HorizontalOptions="Center" />
+            <Button
+    x:Name="PowerAddButton"
+    Text="+"
+    Clicked="AddPower"
+    AbsoluteLayout.LayoutBounds="100, 200, 150, 50" />
+            <Button
+    x:Name="SneakAddButton"
+    Text="+"
+    Clicked="AddSneak" />
+            <Button
+    x:Name="GritAddButton"
+    Text="+"
+    Clicked="AddGrit" />
+            <Button
+    x:Name="MischiefAddButton"
+    Text="+"
+    Clicked="AddMischief" />
+            <Button
+    x:Name="CunningAddButton"
+    Text="+"
+    Clicked="AddCunning" />
+            <Button
+    x:Name="SkitterAddButton"
+    Text="+"
+    Clicked="AddSkitter" />
+            <Button
+    x:Name="GleamAddButton"
+    Text="+"
+    Clicked="AddGleam" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

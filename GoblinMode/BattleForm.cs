@@ -1,16 +1,4 @@
-﻿using GoblinMode.Character;
-using GoblinMode.Item;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿
 namespace GoblinMode
 {
 
@@ -31,14 +19,15 @@ namespace GoblinMode
             currentNPCUI = BattleController.Instance.GetCurrentNPCUI();
 
             NPCNameBox.DataBindings.Add("Text", currentNPCUI, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
-            NPCPortrait.DataBindings.Add("Image", currentNPCUI, "Portrait", false, DataSourceUpdateMode.OnPropertyChanged);
             NPCCurrentHealth.DataBindings.Add("Text", currentNPCUI, "CurrentHealth", false, DataSourceUpdateMode.OnPropertyChanged);
             NPCMaxHealth.DataBindings.Add("Text", currentNPCUI, "MaxHealth", false, DataSourceUpdateMode.OnPropertyChanged);
 
             PlayerNameBox.DataBindings.Add("Text", playerUI, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
-            PlayerPortrait.DataBindings.Add("Image", playerUI, "Portrait", false, DataSourceUpdateMode.OnPropertyChanged);
             PlayerCurrentHealth.DataBindings.Add("Text", playerUI, "CurrentHealth", false, DataSourceUpdateMode.OnPropertyChanged);
             PlayerMaxHealth.DataBindings.Add("Text", playerUI, "MaxHealth", false, DataSourceUpdateMode.OnPropertyChanged);
+
+            NPCPortrait.Image = Image.FromFile(currentNPCUI.PortraitPath);
+            PlayerPortrait.Image = Image.FromFile(playerUI.PortraitPath);
 
             NPCNameBox.Location = new Point(NPCNameBox.Location.X - (int)(NPCNameBox.Width * 1.5), NPCNameBox.Location.Y);
             healthX = NPCCurrentHealth.Location.X;
@@ -48,18 +37,37 @@ namespace GoblinMode
         private void Attack(object sender, EventArgs e)
         {
             BattleController.Instance.Attack();
+            BattleController.Instance.NPCTurn();
+            WinLoss();
         }
 
         private void Run(object sender, EventArgs e)
         {
-            BattleController.Instance.Run();
+            if (BattleController.Instance.Run()) this.Close();
+            BattleController.Instance.NPCTurn();
+            WinLoss();
         }
 
         private void Block(object sender, EventArgs e)
         {
             BattleController.Instance.Block();
+            BattleController.Instance.NPCTurn();
+            WinLoss();
         }
 
+        private void WinLoss()
+        {
+            if (BattleController.Instance.Win())
+            {
+                this.Close();
+            }
+            if (BattleController.Instance.Loss())
+            {
+                LostGameForm form = new LostGameForm();
+                form.ShowDialog();
+                this.Close();
+            }
+        }
 
     }
 }

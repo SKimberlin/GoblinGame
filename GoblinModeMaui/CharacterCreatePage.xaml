@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoblinModeMaui.CharacterCreatePage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Text="Name:" />
+                <Entry
+                    x:Name="NameBox" />
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Text="Points Left:" />
+                <Label
+                    x:Name="PointsLeftCounter" 
+                    Text="{Binding Points}" />
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Button
+                    x:Name="PowerRemoveButton"
+                    Text="-"
+                    Clicked="RemovePower" />
+                <Label
+                    Text="Power: " />
+                <Label 
+                    x:Name="PowerPoints" 
+                    Text="{Binding Power}"/>
+                <Button
+                    x:Name="PowerAddButton"
+                    Text="+"
+                    Clicked="AddPower" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button
+                    x:Name="SneakRemoveButton"
+                    Text="-"
+                    Clicked="RemoveSneak" />
+                            <Label
+                    Text="Sneak: " />
+                            <Label 
+                    x:Name="SneakPoints" 
+                    Text="{Binding Sneak}"/>
+                            <Button
+                    x:Name="SneakAddButton"
+                    Text="+"
+                    Clicked="AddSneak" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button
+                    x:Name="GritRemoveButton"
+                    Text="-"
+                    Clicked="RemoveGrit" />
+                            <Label
+                    Text="Grit: " />
+                            <Label 
+                    x:Name="GritPoints" 
+                    Text="{Binding Grit}"/>
+                            <Button
+                    x:Name="GritAddButton"
+                    Text="+"
+                    Clicked="AddGrit" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button
+                x:Name="MischiefRemoveButton"
+                Text="-"
+                Clicked="RemoveMischief" />
+                        <Label
+                Text="Mischief: " />
+                        <Label 
+                x:Name="MischiefPoints" 
+                Text="{Binding Mischief}"/>
+                        <Button
+                x:Name="MischiefAddButton"
+                Text="+"
+                Clicked="AddMischief" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button
+                    x:Name="CunningRemoveButton"
+                    Text="-"
+                    Clicked="RemoveCunning" />
+                            <Label
+                    Text="Cunning: " />
+                            <Label 
+                    x:Name="CunningPoints" 
+                    Text="{Binding Cunning}"/>
+                            <Button
+                    x:Name="CunningAddButton"
+                    Text="+"
+                    Clicked="AddCunning" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button
+                    x:Name="SkitterRemoveButton"
+                    Text="-"
+                    Clicked="RemoveSkitter" />
+                            <Label
+                    Text="Skitter: " />
+                            <Label 
+                    x:Name="SkitterPoints" 
+                    Text="{Binding Skitter}"/>
+                            <Button
+                    x:Name="SkitterAddButton"
+                    Text="+"
+                    Clicked="AddSkitter" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button
+                    x:Name="GleamRemoveButton"
+                    Text="-"
+                    Clicked="RemoveGleam" />
+                            <Label
+                    Text="Gleam: " />
+                            <Label 
+                    x:Name="GleamPoints" 
+                    Text="{Binding Gleam}"/>
+                            <Button
+                    x:Name="GleamAddButton"
+                    Text="+"
+                    Clicked="AddGleam" />
+            </StackLayout>
+            
+            <Button
+                x:Name="CreateCharacterButton"
+                Text="Create Character" 
+                Clicked="OnCreateCharacterClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

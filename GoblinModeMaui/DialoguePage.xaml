@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoblinModeMaui.DialoguePage"
+             Title="DialoguePage">
+    <VerticalStackLayout>
+        <Label
+            x:Name="NPCNameBox" />
+        <Label
+            x:Name="DialogueBox"
+            Text="" />
+        <Label
+            x:Name="PlayerNameBox" />
+        <Picker 
+            x:Name="DialoguePicker" 
+            Title="Choose a Response">
+        </Picker>
+        <Button
+            x:Name="ResponseButton"
+            Text="Submit" 
+            Clicked="SubmitResponse"/>
+        <Button
+            Text="Leave"
+            Clicked="LeaveDialogue" />
+    </VerticalStackLayout>
+    
+</ContentPage>

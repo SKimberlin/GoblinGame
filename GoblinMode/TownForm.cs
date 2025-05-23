@@ -39,11 +39,15 @@ namespace GoblinMode
         private void GetHelp(object sender, EventArgs e)
         {
             Town.Instance.GetHelp();
+            DialogueForm dialogueForm = new DialogueForm();
+            dialogueForm.ShowDialog();
         }
 
         private void Fight(object sender, EventArgs e)
         {
             Town.Instance.StartFight(EnemyBox.SelectedItem as NonPlayableCharacter);
+            BattleForm battleForm = new BattleForm();
+            battleForm.ShowDialog();
         }
 
         private void TownForm_Shown(object sender, EventArgs e)

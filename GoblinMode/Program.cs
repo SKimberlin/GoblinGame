@@ -11,9 +11,10 @@ namespace GoblinMode
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
 
-            Directory.SetCurrentDirectory("../../..");
+            Directory.SetCurrentDirectory("../../../../Game");
             ApplicationConfiguration.Initialize();
             Game game = new Game();
+            Application.Run(new TitleForm());
 
         }
         

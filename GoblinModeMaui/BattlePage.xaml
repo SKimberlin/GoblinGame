@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoblinModeMaui.BattlePage"
+             Title="BattlePage">
+    <VerticalStackLayout
+        Spacing="25"
+        Padding="30,0"
+        VerticalOptions="Center">
+        
+        <StackLayout Orientation="Horizontal"
+            Spacing="25"
+            Padding="30,0">
+
+            <StackLayout Orientation="Vertical">
+
+
+                <Label
+                    x:Name="PlayerNameBox"
+                    Text="Player Name" />
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        x:Name="PlayerCurrentHealth"
+                        Text="Player Current Health" />
+                    <Label
+                        Text="/" />
+                    <Label
+                        x:Name="PlayerMaxHealth"
+                        Text="Player Max Health" />
+                </StackLayout>
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical">
+                <Label
+                    x:Name="NPCNameBox"
+                    Text="Npc Name" />
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        x:Name="NPCCurrentHealth"
+                        Text="NPC Current Health" />
+                    <Label
+                        Text="/" />
+                    <Label
+                        x:Name="NPCMaxHealth"
+                        Text="NPC Max Health" />
+                </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal">
+            <Button
+                Text="Attack"
+                Clicked="Attack" />
+            <Button
+                Text="Block"
+                Clicked="Block" />
+            <Button
+                Text="Run"
+                Clicked="Run" />
+        </StackLayout>
+        
+        
+    </VerticalStackLayout>
+    
+</ContentPage>
