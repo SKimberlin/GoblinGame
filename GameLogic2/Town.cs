@@ -1,5 +1,6 @@
-﻿using GoblinMode.Character;
+﻿using GoblinMode.Character; 
 using GoblinMode.Dialogue;
+using GoblinMode.Item;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,10 +35,11 @@ namespace GoblinMode
         {
             enemies.Clear();
             float diffuculty = CharacterManager.Instance.GetPlayer().GetLevel() + 2;
+            CharacterFactory<NonPlayableCharacter> enemyFactory = new EnemyFactory(diffuculty, new RandomWeaponFactory());
 
             for (int i = 0; i < numberToPopulate; i++)
             {
-                enemies.Add(Random.GetRandomNPC(diffuculty));
+                enemies.Add(enemyFactory.CreateCharacter());
             }
             OnEnemiesListChanged();
         }
