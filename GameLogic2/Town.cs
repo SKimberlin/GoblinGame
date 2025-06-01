@@ -1,6 +1,7 @@
 ﻿using GoblinMode.Character; 
 using GoblinMode.Dialogue;
 using GoblinMode.Item;
+using GoblinMode.Combat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,10 +62,12 @@ namespace GoblinMode
             CharacterManager.Instance.GetPlayer().SetHealthToMax();
         }
 
-        public void StartFight(NonPlayableCharacter selectedNPC)
+        public BattleFacade StartFight(NonPlayableCharacter selectedNPC)
         {
-            BattleController.Instance.SetBattle(selectedNPC);
+            BattleController controller = new BattleController(CharacterManager.Instance.GetPlayer(), selectedNPC);
+            return new BattleFacade(controller);
         }
+
         public void GetHelp()
         {
             DialogueManager.Instance.StartDialogue(CharacterManager.Instance.GetCharacterByID(0));
