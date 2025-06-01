@@ -11,7 +11,6 @@ namespace GoblinMode
     {
         private UI.Combatant playerUI;
         private UI.Combatant currentNPCUI;
-        private static BattleController instance;
         private NonPlayableCharacter currentNPC;
         private System.Random random = new System.Random();
         private Player player;
@@ -23,23 +22,12 @@ namespace GoblinMode
         private float npcDefenseBuff;
         public NonPlayableCharacter GetEnemy() { return currentNPC; }
         public Player GetPlayer() { return player; }
-        public static BattleController Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new BattleController();
-                }
-                return instance;
-            }
-        }
-        
 
-        public void SetBattle(NonPlayableCharacter npc)
+
+        public BattleController(Player player, NonPlayableCharacter npc)
         {
             currentNPC = npc;
-            player = CharacterManager.Instance.GetPlayer();
+            this.player = player;
             playerAttackBuff = 1 + (player.power * 0.01f);
             npcAttackBuff = 1 + (currentNPC.power * 0.01f);
             playerDefenseBuff = Math.Min(1 - (player.grit * 0.01f), 0.20f);

@@ -45,8 +45,7 @@ namespace GoblinMode
 
         private void Fight(object sender, EventArgs e)
         {
-            Town.Instance.StartFight(EnemyBox.SelectedItem as NonPlayableCharacter);
-            BattleForm battleForm = new BattleForm();
+            BattleForm battleForm = new BattleForm(Town.Instance.StartFight(EnemyBox.SelectedItem as NonPlayableCharacter));
             battleForm.ShowDialog();
         }
 
