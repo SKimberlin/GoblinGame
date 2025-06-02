@@ -46,26 +46,23 @@ namespace GoblinMode
             if (String.IsNullOrEmpty(PlayerResponseBox.Text)) return;
 
             DialogueManager.Instance.SetNewResponse(PlayerResponseBox.Text);
-
             UpdateUI();
         }
 
         private void UpdateUI()
         {
+            var currentResponse = DialogueManager.Instance.GetCurrentResponse();
+            if (currentResponse == null) return;
 
-            if (DialogueManager.Instance.GetCurrentResponse() == null) return;
-            DialogueBox.Text = DialogueManager.Instance.GetCurrentResponse().responseText;
+            DialogueBox.Text = currentResponse.GetText();
             DialogueBox.Location = new Point(x - DialogueBox.Width, DialogueBox.Location.Y);
             PlayerResponseBox.Items.Clear();
 
-            if (DialogueManager.Instance.GetCurrentResponse().dialogueOptions != null)
+            var options = DialogueManager.Instance.GetCurrentOptions();
+            foreach (var option in options.Keys)
             {
-                foreach (var option in DialogueManager.Instance.GetCurrentResponse().dialogueOptions.Keys)
-                {
-                    PlayerResponseBox.Items.Add(option);
-                }
+                PlayerResponseBox.Items.Add(option);
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)

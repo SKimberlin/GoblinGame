@@ -5,32 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GoblinMode.Interfaces;
 
 namespace GoblinMode.Dialogue
 {
     public class DialogueManager
     {
+        private static DialogueManager instance;
+        private IDialogueComponent currentResponse;
         private DialogueCharacter playerUI;
         private DialogueCharacter currentNPCUI;
-        private NonPlayableCharacter currentNPC;
-        private Response currentResponse = new Response();
-        private Dialogue dialogue = new Dialogue();
-        private static DialogueManager instance;
-        
-        public void StartDialogue(NonPlayableCharacter npc)
-        {
-            currentNPC = npc;
-            this.dialogue = currentNPC.dialogue;
-            currentResponse = this.dialogue.dialogueStart;
-            playerUI = new DialogueCharacter();
-            currentNPCUI = new DialogueCharacter();
 
-            playerUI.Name = CharacterManager.Instance.GetPlayer().GetName();
-            playerUI.PortraitPath = CharacterManager.Instance.GetPlayer().GetPortrait();
-
-            currentNPCUI.Name = npc.GetName();
-            currentNPCUI.PortraitPath = npc.GetPortrait();
-        }
         public static DialogueManager Instance
         {
             get
@@ -42,9 +27,43 @@ namespace GoblinMode.Dialogue
                 return instance;
             }
         }
-        public Response GetCurrentResponse() { return currentResponse; }
-        public void SetNewResponse(string stringKey) { currentResponse = currentResponse.dialogueOptions[stringKey]; }
-        public UI.DialogueCharacter GetPlayerUI() { return playerUI; }
-        public UI.DialogueCharacter GetCurrentNPCUI() { return currentNPCUI; }
+        
+        public void StartDialogue(NonPlayableCharacter npc)
+        {
+            currentResponse = npc.dialogue;
+            playerUI = new DialogueCharacter();
+            currentNPCUI = new DialogueCharacter();
+
+            playerUI.Name = CharacterManager.Instance.GetPlayer().GetName();
+            playerUI.PortraitPath = CharacterManager.Instance.GetPlayer().GetPortrait();
+
+            currentNPCUI.Name = npc.GetName();
+            currentNPCUI.PortraitPath = npc.GetPortrait();
+        }
+
+        public IDialogueComponent GetCurrentResponse()
+        {
+            return currentResponse;
+        }
+
+        public void SetNewResponse(string key)
+        {
+            currentResponse = currentResponse.GetChild(key);
+        }
+
+        public Dictionary<string, IDialogueComponent> GetCurrentOptions()
+        {
+            return currentResponse.GetOptions();
+        }
+
+        public DialogueCharacter GetPlayerUI()
+        {
+            return playerUI;
+        }
+
+        public DialogueCharacter GetCurrentNPCUI()
+        {
+            return currentNPCUI;
+        }
     }
 }
