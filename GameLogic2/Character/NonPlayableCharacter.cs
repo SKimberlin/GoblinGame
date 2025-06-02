@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
+using GoblinMode.Interfaces;
 
 namespace GoblinMode.Character
 {
@@ -19,7 +20,7 @@ namespace GoblinMode.Character
         {
             return id;
         }
-        public Dialogue.Dialogue dialogue { get; set; }
+        public IDialogueComponent dialogue { get; set; }
 
     }
 }
